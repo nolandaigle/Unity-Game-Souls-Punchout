@@ -125,7 +125,7 @@ public class Fighter_Base : MonoBehaviour
 
     protected void Dodge()
     {
-        if ( dodgeCost >= currentStamina )
+        if ( currentStamina >= dodgeCost )
         {
             currentStamina -= dodgeCost;
             aSource.clip = dodge;
