@@ -6,6 +6,10 @@ public class OverworldPlayer : MonoBehaviour
 {
 	public Animator anim;
 	public CharacterController cc;
+    public SpriteRenderer sprite;
+
+    public float speed = 5;
+    Vector3 moveDir = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +20,27 @@ public class OverworldPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	Vector3 direction = Vector3.zero;
+        Control();
 
-        direction.x = Input.GetAxis("Horizontal");
-        direction.y = Input.GetAxis("Vertical");
+        Movement();
+    }
 
-        anim.SetFloat("speed", direction.magnitude);
+    void Control()
+    {
+        moveDir.x = Input.GetAxis("Horizontal");
+        moveDir.y = Input.GetAxis("Vertical");
 
-        cc.Move(direction);
+    }
+
+    void Movement()
+    {
+        if ( moveDir.x < 0 )
+            sprite.flipX = true;
+        else if ( moveDir.x > 0 )
+            sprite.flipX = false;
+
+        anim.SetFloat("speed", moveDir.magnitude);
+
+        cc.Move(moveDir*speed*Time.deltaTime);
     }
 }
