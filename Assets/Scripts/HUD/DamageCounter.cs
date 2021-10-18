@@ -14,11 +14,13 @@ public class DamageCounter : MonoBehaviour
 	int currentNumber;
 	bool rolling = false;
 
-	float rollTimer = 0;
-	float rollTime = 1;
+	int rollNums = 2;
+	int currentRollNum = 0;
 
-	float speedTimer = 0;
-	float rollSpeed = 200;
+    private float smoothTime = 0.1f;
+    private float velocity = 0f;
+	private float floatNumber =  0;
+	private float displayNum = 0;
 
 	public Vector2 range = new Vector2( 1, 6 );
 
@@ -33,34 +35,35 @@ public class DamageCounter : MonoBehaviour
     {
         if ( rolling )
         {
-        	speedTimer += Time.deltaTime;
-        	if ( speedTimer*rollSpeed > 1 )
-        	{
-        		currentNumber += 1;
-        		if ( currentNumber > range.y )
-        		{
-        			currentNumber = (int)range.x;
-        		}
-        		rollTimer += speedTimer;
-        		if ( rollTimer > rollTime && currentNumber == finalNumber )
-        		{
-        			aSource.clip = doneSound;
-        			aSource.Play();
-        			rolling = false;
-        		}
-        		else
-        			aSource.Play();
+        	floatNumber = Mathf.SmoothDamp(floatNumber, finalNumber, ref velocity, smoothTime);
+			currentNumber = Mathf.RoundToInt(floatNumber);
 
-        		speedTimer = 0;
-        		text.text = ""+currentNumber;
-        	}
+			displayNum = (currentNumber - (( rollNums - currentRollNum )*range.y));
+
+			if ( displayNum > range.y )
+			{
+				displayNum = 1;
+				currentRollNum -= 1;
+			}
+			if ( currentNumber == finalNumber )
+			{
+				aSource.clip = doneSound;
+				aSource.Play();
+				rolling = false;
+			}
+			else
+				aSource.Play();
+			text.text = ""+displayNum;
         }
     }
 
-    public void Roll( int fNum, float time)
+    public void Roll( int fNum, float time )
     {
-    	rollTime = time;
-    	finalNumber = fNum;
+		smoothTime = time;
+		currentNumber = (int)range.x;
+		currentRollNum = rollNums;
+		floatNumber = currentNumber;
+    	finalNumber = fNum+((int)range.y*currentRollNum);
     	rolling = true;
     	aSource.clip = rollingSound;
     }

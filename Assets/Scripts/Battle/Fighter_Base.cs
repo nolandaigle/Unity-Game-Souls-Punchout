@@ -42,13 +42,13 @@ public class Fighter_Base : MonoBehaviour
     public DamageCounter damageCounter;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
     	StateLogic();
     }
@@ -152,7 +152,7 @@ public class Fighter_Base : MonoBehaviour
             if ( currentStamina >= rightHand.GetStaminaCost() )
             {
                 currentStamina -= rightHand.GetStaminaCost();
-                damageCounter.Roll(rightHand.GetDamage(), 1);
+                damageCounter.Roll(rightHand.GetDamage(), .1f);
             	ChangeState(State.RightHandPrep);
             }
         }
