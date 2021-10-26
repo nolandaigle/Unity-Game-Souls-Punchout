@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSound: {fileID: 8300000, guid: 5b080d63fde424368bca7c86a6207e4e, type: 3}
+  chargeTime: 0
+  hitRecover: 0
 --- !u!114 &401687552 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3351763140079560067, guid: 7d6b7361872f14725b5cfb1e8921ed88,
@@ -581,11 +583,10 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 9f93ecb1b685846659476b5da64b70f0, type: 3}
   dodge: {fileID: 8300000, guid: f8fa4a69fd93645f7acdb50391fedcc4, type: 3}
   stateTimer: 0
-  stateTime: 0.5
   maxHealth: 10
   maxStamina: 10
   staminaTimer: 0
-  staminaTime: 1
+  staminaTime: 0.5
   dodgeCost: 5
   enemy: {fileID: 401687552}
   rightHand: {fileID: 1677160228}
@@ -1423,6 +1424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSound: {fileID: 0}
+  chargeTime: 0.75
+  hitRecover: 0.5
 --- !u!1 &1683912651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,5 +1870,20 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 905349281}
+    - target: {fileID: 3351763140079560067, guid: 7d6b7361872f14725b5cfb1e8921ed88,
+        type: 3}
+      propertyPath: staminaTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351763140733463388, guid: 7d6b7361872f14725b5cfb1e8921ed88,
+        type: 3}
+      propertyPath: chargeTime
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351763140733463388, guid: 7d6b7361872f14725b5cfb1e8921ed88,
+        type: 3}
+      propertyPath: hitRecover
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d6b7361872f14725b5cfb1e8921ed88, type: 3}

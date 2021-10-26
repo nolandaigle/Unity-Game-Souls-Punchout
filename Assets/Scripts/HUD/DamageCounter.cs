@@ -14,7 +14,7 @@ public class DamageCounter : MonoBehaviour
 	int currentNumber;
 	bool rolling = false;
 
-	int rollNums = 2;
+	int rollNums = 1;
 	int currentRollNum = 0;
 
     private float smoothTime = 0.1f;

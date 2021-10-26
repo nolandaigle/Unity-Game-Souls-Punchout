@@ -16,10 +16,13 @@ public class Fighter_Base : MonoBehaviour
 
     //State stuff
     public float stateTimer = 0f;
-    public float stateTime = .75f;
+    Dictionary<State, float> stateTime = new Dictionary<State, float>();
 
 	enum State { Standing, RightHandPrep, RightHandHit, LeftHandPrep, LeftHandHit, Shielding, Hurt, Dodging, Dead };
 	State currentState = State.Standing;
+
+    float hurtRecover = 1f;
+    float dodgeTime = .75f;
 
     //Health stuff
 	public int maxHealth = 10;
@@ -29,7 +32,7 @@ public class Fighter_Base : MonoBehaviour
 	public int maxStamina = 10;
 	protected int currentStamina = 10;
     public float staminaTimer = 0;
-    public float staminaTime = 1;
+    public float staminaTime = .5f;
 
     public int dodgeCost = 5;
 
@@ -44,7 +47,10 @@ public class Fighter_Base : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        
+        stateTime.Add(State.RightHandPrep, rightHand.chargeTime );
+        stateTime.Add(State.RightHandHit, rightHand.hitRecover );
+        stateTime.Add(State.Hurt, hurtRecover );
+        stateTime.Add(State.Dodging, dodgeTime );
     }
 
     // Update is called once per frame
@@ -58,7 +64,8 @@ public class Fighter_Base : MonoBehaviour
     	if ( currentState != State.Standing && currentState != State.Shielding && currentState != State.Dead )
     	{
 	        stateTimer += Time.deltaTime;
-	        if ( stateTimer > stateTime )
+
+	        if ( stateTimer > stateTime[currentState] )
 	        {
 	        	if ( currentState == State.RightHandPrep)
 	        	{
@@ -147,7 +154,7 @@ public class Fighter_Base : MonoBehaviour
 
     protected void RightHandAction()
     {
-        if ( currentState == State.Standing )
+        if ( currentState == State.Standing || currentState == State.Shielding )
         {
             if ( currentStamina >= rightHand.GetStaminaCost() )
             {
