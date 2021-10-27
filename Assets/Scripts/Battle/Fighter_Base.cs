@@ -18,8 +18,8 @@ public class Fighter_Base : MonoBehaviour
     public float stateTimer = 0f;
     Dictionary<State, float> stateTime = new Dictionary<State, float>();
 
-	enum State { Standing, RightHandPrep, RightHandHit, LeftHandPrep, LeftHandHit, Shielding, Hurt, Dodging, Dead };
-	State currentState = State.Standing;
+	protected enum State { Standing, RightHandPrep, RightHandHit, LeftHandPrep, LeftHandHit, Shielding, Hurt, Dodging, Dead };
+	protected State currentState = State.Standing;
 
     float hurtRecover = 1f;
     float dodgeTime = .75f;
@@ -47,6 +47,7 @@ public class Fighter_Base : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        //Create various state timers based on each possible state
         stateTime.Add(State.RightHandPrep, rightHand.chargeTime );
         stateTime.Add(State.RightHandHit, rightHand.hitRecover );
         stateTime.Add(State.Hurt, hurtRecover );

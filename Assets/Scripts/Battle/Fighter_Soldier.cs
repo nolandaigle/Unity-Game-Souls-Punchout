@@ -19,19 +19,22 @@ public class Fighter_Soldier : Fighter_Base
     // Update is called once per frame
     override protected void Update()
     {
-        aiTimer += Time.deltaTime;
-        if ( aiTimer > aiTime )
+        if ( currentState != State.Dead )
         {
-            if ( aiState == AIState.Blocking )
+            aiTimer += Time.deltaTime;
+            if ( aiTimer > aiTime )
             {
-                DefenseLogic();
-            }
-            else if ( aiState == AIState.Attacking )
-            {
-                AttackLogic();
-            }
+                if ( aiState == AIState.Blocking )
+                {
+                    DefenseLogic();
+                }
+                else if ( aiState == AIState.Attacking )
+                {
+                    AttackLogic();
+                }
 
-        	aiTimer = 0;
+                aiTimer = 0;
+            }
         }
 
         base.Update();

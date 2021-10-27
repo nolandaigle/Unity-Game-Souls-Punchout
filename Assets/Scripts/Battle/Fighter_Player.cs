@@ -13,22 +13,25 @@ public class Fighter_Player : Fighter_Base
     // Update is called once per frame
     override protected void Update()
     {
-    	if ( Input.GetButtonDown("RightHandAction") )
-    	{
-    		RightHandAction();
-    	}
-
-    	if ( Input.GetButtonDown("LeftHandAction") )
-    	{
-    		LeftHandAction(true);
-    	}
-    	if ( Input.GetButtonUp("LeftHandAction") )
-    	{
-    		Stand();
-    	}
-        if ( Input.GetButtonDown("Dodge") )
+        if ( currentState != State.Dead )
         {
-            Dodge();
+            if ( Input.GetButtonDown("RightHandAction") )
+            {
+                RightHandAction();
+            }
+
+            if ( Input.GetButtonDown("LeftHandAction") )
+            {
+                LeftHandAction(true);
+            }
+            if ( Input.GetButtonUp("LeftHandAction") )
+            {
+                Stand();
+            }
+            if ( Input.GetButtonDown("Dodge") )
+            {
+                Dodge();
+            }
         }
 
     	base.Update();
