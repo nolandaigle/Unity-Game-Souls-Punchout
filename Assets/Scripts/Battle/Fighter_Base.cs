@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Fighter_Base : MonoBehaviour
 {
+    //Manager
+    public BattleManager bm;
+    bool fighting = true;
+
     //Animator
 	public Animator anim;
 	public Animator rhAnim;
@@ -57,7 +61,8 @@ public class Fighter_Base : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-    	StateLogic();
+        if ( fighting )
+        	StateLogic();
     }
 
     void StateLogic()
@@ -125,10 +130,19 @@ public class Fighter_Base : MonoBehaviour
         if ( currentHealth <= 0 )
         {
             currentHealth = 0;
-            ChangeState(State.Dead);
+            Die();
         }
 
         damageCounter.Cancel();
+    }
+
+    protected void Die()
+    {
+        if ( currentState != State.Dead )
+        {
+            ChangeState(State.Dead);
+            bm.EndBattle();
+        }
     }
 
     protected void Dodge()
@@ -183,6 +197,11 @@ public class Fighter_Base : MonoBehaviour
     	{
     		Attack(rightHand.GetDamage());
     	}
+    }
+    
+    public void StopFighting()
+    {
+        fighting = false;
     }
 
     public int GetMaxHealth()
