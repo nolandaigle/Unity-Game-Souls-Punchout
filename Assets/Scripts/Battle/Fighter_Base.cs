@@ -10,8 +10,6 @@ public class Fighter_Base : MonoBehaviour
 
     //Animator
 	public Animator anim;
-	public Animator rhAnim;
-	public Animator lhAnim;
 
     //Sound
     public AudioSource aSource;
@@ -73,7 +71,7 @@ public class Fighter_Base : MonoBehaviour
 
 	        if ( stateTimer > stateTime[currentState] )
 	        {
-	        	if ( currentState == State.RightHandPrep)
+	        	if ( currentState == State.RightHandPrep && rightHand.GetWeaponType() == "sword" )
 	        	{
 	        		stateTimer = 0;
 	        		ChangeState(State.RightHandHit);
@@ -174,7 +172,8 @@ public class Fighter_Base : MonoBehaviour
             if ( currentStamina >= rightHand.GetStaminaCost() )
             {
                 currentStamina -= rightHand.GetStaminaCost();
-                damageCounter.Roll(rightHand.GetDamage(), .1f);
+                if ( rightHand.GetWeaponType() == "sword" )
+                    damageCounter.Roll(rightHand.GetDamage(), .1f);
             	ChangeState(State.RightHandPrep);
             }
         }
@@ -189,14 +188,20 @@ public class Fighter_Base : MonoBehaviour
     {
         stateTimer = 0;
     	anim.Play(newState.ToString());
-    	rhAnim.Play(newState.ToString());
-    	lhAnim.Play(newState.ToString());
+    	rightHand.ChangeState(newState.ToString());
+    	leftHand.ChangeState(newState.ToString());
     	currentState = newState;
 
     	if ( currentState == State.RightHandHit )
     	{
     		Attack(rightHand.GetDamage());
     	}
+    }
+
+    public void ChangeState(string newState)
+    {
+        if ( newState == "RightHandHit")
+            ChangeState(State.RightHandHit);
     }
     
     public void StopFighting()
