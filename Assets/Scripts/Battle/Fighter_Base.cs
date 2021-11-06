@@ -203,6 +203,14 @@ public class Fighter_Base : MonoBehaviour
         if ( newState == "RightHandHit")
             ChangeState(State.RightHandHit);
     }
+
+    public virtual void Heal(int amount)
+    {
+        currentHealth += amount;
+        if ( currentHealth > maxHealth )
+            currentHealth = maxHealth;
+        ChangeState(State.Standing);
+    }
     
     public void StopFighting()
     {

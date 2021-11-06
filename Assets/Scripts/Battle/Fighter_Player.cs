@@ -36,9 +36,4 @@ public class Fighter_Player : Fighter_Base
 
     	base.Update();
     }
-
-    RightHandPrep()
-    {
-        anim.Play(newState.ToString());
-    }
 }

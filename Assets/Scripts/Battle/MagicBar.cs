@@ -12,12 +12,12 @@ public class MagicBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        print(running);
         if ( running )
         {
             xPos += speed*dir*Time.deltaTime;
@@ -35,9 +35,9 @@ public class MagicBar : MonoBehaviour
         return xPos;
     }
 
-    public void StartBar()
+    public void StartBar(float startX = 0)
     {
-        xPos = 0;
+        xPos = startX;
         running = true;
     }
 

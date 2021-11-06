@@ -27,6 +27,11 @@ public class Weapon : MonoBehaviour
     	return Random.Range(1, 6);
     }
 
+    virtual public int GetHeal()
+    {
+    	return Random.Range(1, 6);
+    }
+
     public int GetStaminaCost()
     {
     	return 5;
