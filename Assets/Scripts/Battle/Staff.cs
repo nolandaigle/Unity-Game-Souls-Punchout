@@ -8,7 +8,7 @@ public class Staff : Weapon
     public Fighter_Base fighter;
 
     public float inputTimer = 0;
-    bool running;
+    bool running = false;
 
     public MeshFilter meshFilter;
 
@@ -31,6 +31,7 @@ public class Staff : Weapon
             inputTimer += Time.deltaTime;
             if ( Input.GetButtonDown("RightHandAction") && inputTimer > .1f )
             {
+                print(spellPhase);
                 inputTimer = 0;
                 CastSpell(spellPhase);
             }
@@ -47,9 +48,12 @@ public class Staff : Weapon
         }
         else
         {
+            print("asdf");
             spellPhase = 1;
             running = false;
             magicBar.StopBar();
+            ResetColors();
+            inputTimer = 0;
         }
     }
 

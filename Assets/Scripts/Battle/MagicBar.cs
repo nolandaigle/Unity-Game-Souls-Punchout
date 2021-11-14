@@ -17,7 +17,6 @@ public class MagicBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(running);
         if ( running )
         {
             xPos += speed*dir*Time.deltaTime;
