@@ -26,6 +26,5 @@ public class OverworldEnemy : MonoBehaviour
     public void OnCollisionEnter(Collision other)
     {
         SceneManager.LoadScene("Battle");
-
     }
 }

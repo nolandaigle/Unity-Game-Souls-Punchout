@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class ClassSelector : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class ClassSelector : MonoBehaviour
     // starting value for the Lerp
     static float t = 0.0f;
 
-    int selected = 0;
+    int classSelected = 0;
 
     public float changeSpeed = 1;
 
     bool buttonDown = false;
+
+    bool isClassSelected = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,32 +30,47 @@ public class ClassSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Input.GetAxis("Horizontal") > 0 )
+        if ( !isClassSelected )
         {
-            if ( selected > -1 && !buttonDown )
+            if ( Input.GetAxis("Horizontal") > 0 )
             {
-                selected -= 1;
-                start = transform.position.x;
-                end = 20*selected;
-                t = 0;
-                BroadcastMessage("StopBounce");
-                buttonDown = true;
+                if ( classSelected > -1 && !buttonDown )
+                {
+                    classSelected -= 1;
+                    start = transform.position.x;
+                    end = 20*classSelected;
+                    t = 0;
+                    BroadcastMessage("StopBounce");
+                    buttonDown = true;
+                }
             }
-        }
-        else if ( Input.GetAxis("Horizontal") < 0 )
-        {
-            if ( selected < 1 && !buttonDown )
+            else if ( Input.GetAxis("Horizontal") < 0 )
             {
-                selected += 1;
-                start = transform.position.x;
-                end = 20*selected;
-                t = 0;
-                BroadcastMessage("StopBounce");
-                buttonDown = true;
+                if ( classSelected < 1 && !buttonDown )
+                {
+                    classSelected += 1;
+                    start = transform.position.x;
+                    end = 20*classSelected;
+                    t = 0;
+                    BroadcastMessage("StopBounce");
+                    buttonDown = true;
+                }
             }
+            else
+                buttonDown = false;
+
+            if ( Input.GetButtonDown("Select") )
+            {
+                if ( classSelected == 0 )
+                    SaveClass("Warrior");
+                else if ( classSelected == 1 )
+                    SaveClass("Thief");
+                else if ( classSelected == -1 )
+                    SaveClass("Mage");
+                isClassSelected = true;
+            }
+
         }
-        else
-            buttonDown = false;
         
         if ( t < 1.5 && t >= 0 )
         {
@@ -64,6 +82,30 @@ public class ClassSelector : MonoBehaviour
         {
             t = -1;
             BroadcastMessage("StartBounce", true);
+        }
+    }
+
+    void SaveClass(string selectedClass)
+    {
+        string path = Application.dataPath+"/test.txt";
+        try
+        {
+            using (StreamReader reader = new StreamReader(path))
+            {
+                print(reader.ReadToEnd());
+                reader.Close();
+                File.Delete(path);
+                StreamWriter writer = new StreamWriter(path, true);
+                writer.Write(selectedClass);
+                writer.Close();
+            }
+        }
+        catch
+        {
+            //If none exists, create a file
+            StreamWriter writer = new StreamWriter(path, true);
+            writer.Write(selectedClass);
+            writer.Close();
         }
     }
 }

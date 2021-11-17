@@ -301,6 +301,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1154c62f93c5840eb88d3003aba19a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &946115216 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6703677775757427627, guid: ef606eeb32ab938489ace203f9729d3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703677774189866127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe7fb55af111469e945c1726c0ffd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &946115217 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6703677775757427629, guid: ef606eeb32ab938489ace203f9729d3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703677774189866127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +603,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692590546}
     m_Modifications:
+    - target: {fileID: 3060889879165578576, guid: ef606eeb32ab938489ace203f9729d3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3060889879165578578, guid: ef606eeb32ab938489ace203f9729d3b,
         type: 3}
       propertyPath: m_Controller
@@ -611,6 +634,11 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 401687552}
+    - target: {fileID: 6703677775052678190, guid: ef606eeb32ab938489ace203f9729d3b,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 946115216}
     - target: {fileID: 6703677775052678191, guid: ef606eeb32ab938489ace203f9729d3b,
         type: 3}
       propertyPath: m_RootOrder
@@ -665,6 +693,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703677775757427627, guid: ef606eeb32ab938489ace203f9729d3b,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 946115217}
+    - target: {fileID: 6703677775757427631, guid: ef606eeb32ab938489ace203f9729d3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef606eeb32ab938489ace203f9729d3b, type: 3}

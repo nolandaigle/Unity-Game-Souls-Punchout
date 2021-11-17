@@ -107,6 +107,15 @@ public class Fighter_Base : MonoBehaviour
     	enemy.Hurt(damage);
     }
 
+    public void SapStamina(int amount)
+    {
+        currentStamina -= amount;
+        if ( currentStamina < 0 )
+        {
+            currentStamina = 0;
+        }
+    }
+
     public void Hurt(int damage)
     {
     	if ( currentState != State.Shielding && currentState != State.Dodging )
@@ -121,6 +130,7 @@ public class Fighter_Base : MonoBehaviour
             int shieldedDamage = Mathf.RoundToInt(damage/2);
             currentHealth -= shieldedDamage;
             currentStamina -= shieldedDamage;
+            enemy.SapStamina(damage);
             aSource.clip = leftHand.blockSound;
             aSource.Play();
         }
