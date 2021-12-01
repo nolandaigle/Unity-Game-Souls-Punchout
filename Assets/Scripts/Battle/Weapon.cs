@@ -9,6 +9,12 @@ public class Weapon : MonoBehaviour
     public float chargeTime = .75f;
     public float hitRecover = .5f;
     public string type = "sword";
+    public string damageType = "physical";
+
+    public int effectMin = 1;
+    public int effectMax = 6;
+
+    public int staminaCost = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +28,24 @@ public class Weapon : MonoBehaviour
         
     }
 
+    virtual public string GetDamageType()
+    {
+        return damageType;
+    }
+
     virtual public int GetDamage()
     {
-    	return Random.Range(1, 6);
+    	return Random.Range(effectMin, effectMax);
     }
 
     virtual public int GetHeal()
     {
-    	return Random.Range(1, 6);
+    	return Random.Range(effectMin, effectMax);
     }
 
     public int GetStaminaCost()
     {
-    	return 5;
+    	return staminaCost;
     }
 
     public string GetWeaponType()

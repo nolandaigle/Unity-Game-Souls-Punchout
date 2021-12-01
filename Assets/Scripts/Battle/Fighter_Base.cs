@@ -17,10 +17,10 @@ public class Fighter_Base : MonoBehaviour
     public AudioClip dodge;
 
     //State stuff
-    public float stateTimer = 0f;
+    float stateTimer = 0f;
     Dictionary<State, float> stateTime = new Dictionary<State, float>();
 
-	protected enum State { Standing, RightHandPrep, RightHandHit, LeftHandPrep, LeftHandHit, Shielding, Hurt, Dodging, Dead };
+	public enum State { Standing, RightHandPrep, RightHandHit, LeftHandPrep, LeftHandHit, Shielding, Hurt, Dodging, Dead };
 	protected State currentState = State.Standing;
 
     float hurtRecover = 1f;
@@ -52,8 +52,13 @@ public class Fighter_Base : MonoBehaviour
         //Create various state timers based on each possible state
         stateTime.Add(State.RightHandPrep, rightHand.chargeTime );
         stateTime.Add(State.RightHandHit, rightHand.hitRecover );
+        stateTime.Add(State.LeftHandPrep, leftHand.chargeTime );
+        stateTime.Add(State.LeftHandHit, leftHand.hitRecover );
         stateTime.Add(State.Hurt, hurtRecover );
         stateTime.Add(State.Dodging, dodgeTime );
+
+        currentHealth = maxHealth;
+        currentStamina = maxStamina;
     }
 
     // Update is called once per frame
@@ -102,9 +107,9 @@ public class Fighter_Base : MonoBehaviour
         }
     }
 
-    void Attack( int damage )
+    void Attack( int damage, string type )
     {
-    	enemy.Hurt(damage);
+    	enemy.Hurt(damage, type);
     }
 
     public void SapStamina(int amount)
@@ -116,9 +121,9 @@ public class Fighter_Base : MonoBehaviour
         }
     }
 
-    public void Hurt(int damage)
+    public void Hurt(int damage, string type )
     {
-    	if ( currentState != State.Shielding && currentState != State.Dodging )
+    	if ( currentState != State.Shielding && ( currentState != State.Dodging || type == "IgnoreDodge" ) )
         {
             aSource.clip = hurt;
             aSource.Play();
@@ -130,7 +135,7 @@ public class Fighter_Base : MonoBehaviour
             int shieldedDamage = Mathf.RoundToInt(damage/2);
             currentHealth -= shieldedDamage;
             currentStamina -= shieldedDamage;
-            enemy.SapStamina(damage);
+            enemy.SapStamina(10);
             aSource.clip = leftHand.blockSound;
             aSource.Play();
         }
@@ -166,12 +171,17 @@ public class Fighter_Base : MonoBehaviour
 
     protected void LeftHandAction(bool shielding=false)
     {
-        if ( currentState == State.Standing )
+        if ( currentState == State.Standing || currentState == State.Shielding  )
         {
-        	if ( shielding )
+            if ( shielding )
     	    	ChangeState(State.Shielding);
-    	    else
-        		ChangeState(State.LeftHandPrep);
+        	else if ( currentStamina >= leftHand.GetStaminaCost() )
+            {
+                currentStamina -= leftHand.GetStaminaCost();
+                if ( rightHand.GetWeaponType() == "sword" )
+                    damageCounter.Roll(leftHand.GetDamage(), .1f);
+            	ChangeState(State.LeftHandPrep);
+            }
         }
     }
 
@@ -204,7 +214,11 @@ public class Fighter_Base : MonoBehaviour
 
     	if ( currentState == State.RightHandHit )
     	{
-    		Attack(rightHand.GetDamage());
+    		Attack(rightHand.GetDamage(), rightHand.GetDamageType() );
+    	}
+        else if ( currentState == State.LeftHandHit )
+    	{
+    		Attack(leftHand.GetDamage(), leftHand.GetDamageType() );
     	}
     }
 
@@ -212,6 +226,9 @@ public class Fighter_Base : MonoBehaviour
     {
         if ( newState == "RightHandHit")
             ChangeState(State.RightHandHit);
+        else 
+        if ( newState == "LeftHandHit")
+            ChangeState(State.LeftHandHit);
     }
 
     public virtual void Heal(int amount)
@@ -245,5 +262,10 @@ public class Fighter_Base : MonoBehaviour
     public int GetCurrentStamina()
     {
     	return currentStamina;
+    }
+
+    public State GetCurrentState()
+    {
+        return currentState;
     }
 }

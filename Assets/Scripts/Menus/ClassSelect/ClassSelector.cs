@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class ClassSelector : MonoBehaviour
 {
@@ -87,25 +86,7 @@ public class ClassSelector : MonoBehaviour
 
     void SaveClass(string selectedClass)
     {
-        string path = Application.dataPath+"/test.txt";
-        try
-        {
-            using (StreamReader reader = new StreamReader(path))
-            {
-                print(reader.ReadToEnd());
-                reader.Close();
-                File.Delete(path);
-                StreamWriter writer = new StreamWriter(path, true);
-                writer.Write(selectedClass);
-                writer.Close();
-            }
-        }
-        catch
-        {
-            //If none exists, create a file
-            StreamWriter writer = new StreamWriter(path, true);
-            writer.Write(selectedClass);
-            writer.Close();
-        }
+        SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
+        save.SaveFile();
     }
 }
