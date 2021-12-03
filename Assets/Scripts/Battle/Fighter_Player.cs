@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Fighter_Player : Fighter_Base
 {
+    SaveState save;
+
     // Start is called before the first frame update
     override protected void Start()
     {
+        save = (SaveState)FindObjectOfType(typeof(SaveState));
+        if ( save.playerCurrentHealth != null)
+            currentHealth = save.playerCurrentHealth;
+        if ( save.playerMaxHealth != null)
+            maxHealth = save.playerMaxHealth;
+
         base.Start();
     }
 
@@ -35,5 +43,11 @@ public class Fighter_Player : Fighter_Base
         }
 
     	base.Update();
+    }
+
+    override public void StopFighting()
+    {
+        save.playerCurrentHealth = currentHealth;
+        base.StopFighting();
     }
 }

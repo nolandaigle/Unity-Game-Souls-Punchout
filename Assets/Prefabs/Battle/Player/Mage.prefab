@@ -17,6 +17,10 @@ MonoBehaviour:
   chargeTime: 0.75
   hitRecover: 0.5
   type: staff
+  damageType: physical
+  effectMin: 1
+  effectMax: 6
+  staminaCost: 5
   magicBar: {fileID: 6703677774182946878}
   fighter: {fileID: 6703677775052678190}
   inputTimer: 0
@@ -369,7 +373,6 @@ MonoBehaviour:
   aSource: {fileID: 6703677775052678189}
   hurt: {fileID: 8300000, guid: 9f93ecb1b685846659476b5da64b70f0, type: 3}
   dodge: {fileID: 8300000, guid: f8fa4a69fd93645f7acdb50391fedcc4, type: 3}
-  stateTimer: 0
   maxHealth: 10
   maxStamina: 10
   staminaTimer: 0

@@ -11,10 +11,21 @@ public class OverworldPlayer : MonoBehaviour
     public float speed = 5;
     Vector3 moveDir = Vector3.zero;
 
+    int currentHealth;
+    int maxHealth;
+
+    SaveState save;
+
     // Start is called before the first frame update
     void Start()
     {
         anim.Play("Walk");
+
+        save = (SaveState)FindObjectOfType(typeof(SaveState));
+        if ( save.playerCurrentHealth != null)
+            currentHealth = save.playerCurrentHealth;
+        if ( save.playerMaxHealth != null)
+            maxHealth = save.playerMaxHealth;
     }
 
     // Update is called once per frame
@@ -42,5 +53,20 @@ public class OverworldPlayer : MonoBehaviour
         anim.SetFloat("speed", moveDir.magnitude);
 
         cc.Move(moveDir*speed*Time.deltaTime);
+    }
+
+    public int GetMaxHealth()
+    {
+    	return maxHealth;
+    }
+
+    public int GetCurrentHealth()
+    {
+    	return currentHealth;
+    }
+
+    public void StartBattle()
+    {
+        save.playerCurrentHealth = currentHealth;
     }
 }

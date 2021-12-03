@@ -30,8 +30,12 @@ public class BattleManager : MonoBehaviour
         {
             enemyDictionary.Add( i.name, i.prefab );
         }
-
-        LoadEnemy("BirdBaby");
+        
+        SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
+        print(save.gameObject.name);
+        string e = save.currentEnemy;
+        
+        LoadEnemy(e);
     }
 
     // Update is called once per frame
@@ -62,6 +66,7 @@ public class BattleManager : MonoBehaviour
 
     public void LoadEnemy(string name )
     {
+        print(name);
         GameObject temp = Instantiate( enemyDictionary[name], transform.position, Quaternion.identity);
         temp.GetComponent<Fighter_Base>().enemy = player;
         temp.GetComponent<Fighter_Base>().bm = this;

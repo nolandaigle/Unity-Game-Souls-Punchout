@@ -11,7 +11,7 @@ public class OverworldEnemy : MonoBehaviour
     public float speed = 5;
     Vector3 moveDir = Vector3.zero;
 
-    public string battleName = "guard";
+    public string battleName = "Soldier";
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,11 @@ public class OverworldEnemy : MonoBehaviour
     {
     }
 
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
+        SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
+        save.currentEnemy = battleName;
+        other.transform.GetComponent<OverworldPlayer>().StartBattle();
         SceneManager.LoadScene("Battle");
     }
 }

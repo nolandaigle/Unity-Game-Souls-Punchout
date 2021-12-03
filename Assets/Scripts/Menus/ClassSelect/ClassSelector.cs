@@ -87,6 +87,7 @@ public class ClassSelector : MonoBehaviour
     void SaveClass(string selectedClass)
     {
         SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
+        save.playerClass = selectedClass;
         save.SaveFile();
     }
 }

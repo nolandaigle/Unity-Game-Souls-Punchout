@@ -823,14 +823,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: addd60de3416f433bab2befb5b5201b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bm: {fileID: 0}
   anim: {fileID: 3351763139382540853}
-  rhAnim: {fileID: 3351763140733463390}
-  lhAnim: {fileID: 3351763140806775105}
   aSource: {fileID: 3351763140079560066}
   hurt: {fileID: 8300000, guid: 9f93ecb1b685846659476b5da64b70f0, type: 3}
   dodge: {fileID: 0}
-  stateTimer: 0
-  stateTime: 0.5
   maxHealth: 10
   maxStamina: 10
   staminaTimer: 0
@@ -1237,7 +1234,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe7fb55af111469e945c1726c0ffd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3351763140733463390}
   blockSound: {fileID: 0}
+  chargeTime: 0.75
+  hitRecover: 0.5
+  type: sword
+  damageType: physical
+  effectMin: 1
+  effectMax: 6
+  staminaCost: 5
 --- !u!1 &3351763140803475922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,4 +1406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe7fb55af111469e945c1726c0ffd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3351763140806775105}
   blockSound: {fileID: 8300000, guid: 5b080d63fde424368bca7c86a6207e4e, type: 3}
+  chargeTime: 0.75
+  hitRecover: 0.5
+  type: sword
+  damageType: physical
+  effectMin: 1
+  effectMax: 6
+  staminaCost: 5

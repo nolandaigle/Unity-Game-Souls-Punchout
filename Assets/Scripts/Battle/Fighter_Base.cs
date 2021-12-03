@@ -57,7 +57,6 @@ public class Fighter_Base : MonoBehaviour
         stateTime.Add(State.Hurt, hurtRecover );
         stateTime.Add(State.Dodging, dodgeTime );
 
-        currentHealth = maxHealth;
         currentStamina = maxStamina;
     }
 
@@ -239,7 +238,7 @@ public class Fighter_Base : MonoBehaviour
         ChangeState(State.Standing);
     }
     
-    public void StopFighting()
+    public virtual void StopFighting()
     {
         fighting = false;
     }
