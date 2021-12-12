@@ -1,1 +1,1 @@
-{"playerClass":"Warrior"}
+{"playerClass":"nodata","currentEnemy":"BirdBoss","playerMaxHealth":10,"playerCurrentHealth":5,"enemySelector":{"x":5.0,"y":0.0,"z":15.0},"enemyOptions":[],"currentEnemyID":8}

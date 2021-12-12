@@ -27,7 +27,7 @@ public class OverworldEnemy : MonoBehaviour
     {
         SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
         save.currentEnemy = battleName;
-        other.transform.GetComponent<OverworldPlayer>().StartBattle();
+        // other.transform.GetComponent<OverworldPlayer>().StartBattle();
         SceneManager.LoadScene("Battle");
     }
 }

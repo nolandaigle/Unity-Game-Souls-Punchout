@@ -14,6 +14,11 @@ public class SaveState : MonoBehaviour {
     public int playerMaxHealth = 10;
     public int playerCurrentHealth = 10;
 
+    public Vector3 enemySelector = Vector3.zero;
+    public Transform[] enemyOptions;
+
+    public int currentEnemyID;
+
 
     private void Awake()
     {
@@ -23,7 +28,7 @@ public class SaveState : MonoBehaviour {
         } else {
             _instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Start()
@@ -63,7 +68,6 @@ public class SaveState : MonoBehaviour {
         {
             using (StreamReader reader = new StreamReader(path))
             {
-                print(reader.ReadToEnd());
                 reader.Close();
                 File.Delete(path);
                 StreamWriter writer = new StreamWriter(path, true);

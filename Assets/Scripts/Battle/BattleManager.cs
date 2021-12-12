@@ -32,7 +32,6 @@ public class BattleManager : MonoBehaviour
         }
         
         SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
-        print(save.gameObject.name);
         string e = save.currentEnemy;
         
         LoadEnemy(e);
@@ -46,7 +45,8 @@ public class BattleManager : MonoBehaviour
             endTimer += Time.deltaTime;
             if ( endTimer > endTime )
             {
-                SceneManager.LoadScene("Overworld");
+                // SceneManager.LoadScene("Overworld");
+                SceneManager.LoadScene("BattleTree");
             }
         }
     }
@@ -66,7 +66,6 @@ public class BattleManager : MonoBehaviour
 
     public void LoadEnemy(string name )
     {
-        print(name);
         GameObject temp = Instantiate( enemyDictionary[name], transform.position, Quaternion.identity);
         temp.GetComponent<Fighter_Base>().enemy = player;
         temp.GetComponent<Fighter_Base>().bm = this;

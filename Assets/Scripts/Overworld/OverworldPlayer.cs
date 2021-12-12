@@ -22,9 +22,9 @@ public class OverworldPlayer : MonoBehaviour
         anim.Play("Walk");
 
         save = (SaveState)FindObjectOfType(typeof(SaveState));
-        if ( save.playerCurrentHealth != null)
+        if ( save.playerCurrentHealth != 0)
             currentHealth = save.playerCurrentHealth;
-        if ( save.playerMaxHealth != null)
+        if ( save.playerMaxHealth != 0)
             maxHealth = save.playerMaxHealth;
     }
 
@@ -68,5 +68,6 @@ public class OverworldPlayer : MonoBehaviour
     public void StartBattle()
     {
         save.playerCurrentHealth = currentHealth;
+        save.SaveFile();
     }
 }
