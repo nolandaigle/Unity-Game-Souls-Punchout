@@ -15,9 +15,10 @@ public class SaveState : MonoBehaviour {
     public int playerCurrentHealth = 10;
 
     public Vector3 enemySelector = Vector3.zero;
-    public Transform[] enemyOptions;
 
     public int currentEnemyID;
+
+    public int charUnlock = 1;
 
 
     private void Awake()
@@ -29,6 +30,9 @@ public class SaveState : MonoBehaviour {
             _instance = this;
         }
         DontDestroyOnLoad(gameObject);
+
+        LoadFile();
+        print(enemySelector);
     }
 
     public void Start()
@@ -50,6 +54,7 @@ public class SaveState : MonoBehaviour {
                 //Load variables
                 playerClass = output.playerClass;
                 currentEnemy = output.currentEnemy;
+                enemySelector = output.enemySelector;
 
                 return "Success!";
             }

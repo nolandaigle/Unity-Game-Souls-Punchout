@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClassSelector : MonoBehaviour
 {
@@ -19,11 +20,14 @@ public class ClassSelector : MonoBehaviour
 
     bool isClassSelected = false;
 
+    SaveState save;
+
     // Start is called before the first frame update
     void Start()
     {
         start = transform.position.x;
         end = transform.position.x;
+        save = (SaveState)FindObjectOfType(typeof(SaveState));
     }
 
     // Update is called once per frame
@@ -35,24 +39,14 @@ public class ClassSelector : MonoBehaviour
             {
                 if ( classSelected > -1 && !buttonDown )
                 {
-                    classSelected -= 1;
-                    start = transform.position.x;
-                    end = 20*classSelected;
-                    t = 0;
-                    BroadcastMessage("StopBounce");
-                    buttonDown = true;
+                    SwitchTo(classSelected-1);
                 }
             }
             else if ( Input.GetAxis("Horizontal") < 0 )
             {
                 if ( classSelected < 1 && !buttonDown )
                 {
-                    classSelected += 1;
-                    start = transform.position.x;
-                    end = 20*classSelected;
-                    t = 0;
-                    BroadcastMessage("StopBounce");
-                    buttonDown = true;
+                    SwitchTo(classSelected+1);
                 }
             }
             else
@@ -67,6 +61,7 @@ public class ClassSelector : MonoBehaviour
                 else if ( classSelected == -1 )
                     SaveClass("Mage");
                 isClassSelected = true;
+                SceneManager.LoadScene("BattleTree");
             }
 
         }
@@ -81,13 +76,25 @@ public class ClassSelector : MonoBehaviour
         {
             t = -1;
             BroadcastMessage("StartBounce", true);
+            if ( ( save.charUnlock < 2 && classSelected == -1 ) || ( save.charUnlock < 3 && classSelected == 1 ) )
+            {
+                    SwitchTo(0);
+            }
         }
     }
 
     void SaveClass(string selectedClass)
     {
-        SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
         save.playerClass = selectedClass;
-        save.SaveFile();
+    }
+
+    void SwitchTo( int toSelect )
+    {
+        classSelected = toSelect;
+        start = transform.position.x;
+        end = 20*toSelect;
+        t = 0;
+        BroadcastMessage("StopBounce");
+        buttonDown = true;
     }
 }

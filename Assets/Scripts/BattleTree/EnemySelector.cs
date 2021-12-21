@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySelector : MonoBehaviour
 {
     int dir = -1;
-    public Transform[] enemyOptions;
     public Transform player;
 
     public Vector3 target;
@@ -18,16 +17,7 @@ public class EnemySelector : MonoBehaviour
     void Start()
     {
         SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
-        if ( save.enemySelector != Vector3.zero )
-            player.position = save.enemySelector;
-        else
-            save.enemySelector = player.position;
-        
-        if ( save.enemyOptions[0] != null && save.enemyOptions[1] != null )
-        {
-            enemyOptions = new Transform[2];
-            enemyOptions =  save.enemyOptions;
-        }
+        player.position = save.enemySelector;
     }
 
     // Update is called once per frame
@@ -43,7 +33,7 @@ public class EnemySelector : MonoBehaviour
         {
             dir = 1;
             transform.localPosition = new Vector3( .6f, .6f, 0 );
-            transform.eulerAngles = new Vector3( 0, 0, -45 );
+            transform.eulerAngles = new Vector3( 0, 0, 45 );
         }
 
         if ( Input.GetButtonDown("Select") && moving == false )
@@ -54,20 +44,17 @@ public class EnemySelector : MonoBehaviour
             {
                 target = player.position + new Vector3( -5, 0, 5 );
                 save.enemySelector = target;
-                print("test");
             }
             if ( dir == 1  )
             {
                 target = player.position + new Vector3( 5, 0, 5 );
                 save.enemySelector = target;
-                print("test");
             }
         }
 
         if ( moving )
         {
-            print(target);
-                player.position = Vector3.SmoothDamp(player.position, target, ref velocity, smoothTime);
+            player.position = Vector3.SmoothDamp(player.position, target, ref velocity, smoothTime);
         }
     }
 }

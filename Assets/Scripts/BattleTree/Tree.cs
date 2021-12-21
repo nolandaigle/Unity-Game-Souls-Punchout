@@ -22,6 +22,7 @@ public class Tree : MonoBehaviour
 
     void Generate()
     {
+        print("Generating tree");
         for ( int i = 0; i < nodePrefabs.Length; i++ )
         {
             if ( rankedPrefabs.ContainsKey(nodePrefabs[i].GetComponent<TreeEnemy>().rank ) )
@@ -39,11 +40,12 @@ public class Tree : MonoBehaviour
         float zPos = 5;
         int currentRow = 0;
         int enemyID = 1;
-        for ( int i = 0; i < 2+currentRow; i++ )
+            print(rankedPrefabs.Count);
+        for ( int i = 0; i < rankedPrefabs.Count; i++ )
         {
             for ( int j = 0; j < 2+currentRow; j++ )
             {
-                if ( enemyID != lastEnemyID )
+                if ( enemyID != lastEnemyID && save.enemySelector.z < zPos )
                 {
                     int temp_x = 10*j - ( (1+currentRow)*10/2 );
                     GameObject enemy = Instantiate(rankedPrefabs[i][Random.Range(0, rankedPrefabs[i].Count)], transform.position + new Vector3(temp_x, 0, zPos), Quaternion.identity );
