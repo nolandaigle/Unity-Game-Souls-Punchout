@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySelector : MonoBehaviour
 {
-    int dir = -1;
+    int dir = 1;
     public Transform player;
 
     public Vector3 target;
