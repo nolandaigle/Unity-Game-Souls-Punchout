@@ -60,6 +60,7 @@ public class Fighter_Base : MonoBehaviour
         stateTime.Add(State.Dodging, dodgeTime );
 
         currentStamina = maxStamina;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -110,7 +111,10 @@ public class Fighter_Base : MonoBehaviour
 
     void Attack( int damage, string type )
     {
-    	enemy.Hurt(damage, type);
+        if ( type == "healing" )
+            Heal(damage);
+        else
+        	enemy.Hurt(damage, type);
     }
 
     public void SapStamina(int amount)
@@ -124,7 +128,8 @@ public class Fighter_Base : MonoBehaviour
 
     public void Hurt(int damage, string type )
     {
-    	if ( currentState != State.Shielding && ( currentState != State.Dodging || type == "IgnoreDodge" ) )
+    	if ( ( currentState != State.Shielding  || type == "IgnoreBlock"  ) 
+        && ( currentState != State.Dodging || type == "IgnoreDodge" ) )
         {
             if ( staggerable || currentState == State.Standing  )
                 ChangeState(State.Hurt);

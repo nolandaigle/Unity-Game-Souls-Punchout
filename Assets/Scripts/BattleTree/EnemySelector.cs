@@ -42,12 +42,12 @@ public class EnemySelector : MonoBehaviour
             SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
             if ( dir == -1 )
             {
-                target = player.position + new Vector3( -5, 0, 5 );
+                target = player.position + new Vector3( -5, 5/2, 5 );
                 save.enemySelector = target;
             }
             if ( dir == 1  )
             {
-                target = player.position + new Vector3( 5, 0, 5 );
+                target = player.position + new Vector3( 5, 5/2, 5 );
                 save.enemySelector = target;
             }
         }

@@ -128,5 +128,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleName: BirdBoss
   enemyOptions: []
-  rank: 2
-  objectId: 4
+  rank: 3
+  objectID: 0

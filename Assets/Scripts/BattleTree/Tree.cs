@@ -6,6 +6,7 @@ public class Tree : MonoBehaviour
 {
     Node[] nodes;
     public GameObject[] nodePrefabs;
+    public GameObject      
     Dictionary<int, List<GameObject> > rankedPrefabs = new Dictionary< int, List<GameObject> >();
 
     // Start is called before the first frame update
@@ -22,7 +23,6 @@ public class Tree : MonoBehaviour
 
     void Generate()
     {
-        print("Generating tree");
         for ( int i = 0; i < nodePrefabs.Length; i++ )
         {
             if ( rankedPrefabs.ContainsKey(nodePrefabs[i].GetComponent<TreeEnemy>().rank ) )
@@ -40,7 +40,8 @@ public class Tree : MonoBehaviour
         float zPos = 5;
         int currentRow = 0;
         int enemyID = 1;
-            print(rankedPrefabs.Count);
+        
+        Random.seed = 42;
         for ( int i = 0; i < rankedPrefabs.Count; i++ )
         {
             for ( int j = 0; j < 2+currentRow; j++ )
@@ -48,7 +49,7 @@ public class Tree : MonoBehaviour
                 if ( enemyID != lastEnemyID && save.enemySelector.z < zPos )
                 {
                     int temp_x = 10*j - ( (1+currentRow)*10/2 );
-                    GameObject enemy = Instantiate(rankedPrefabs[i][Random.Range(0, rankedPrefabs[i].Count)], transform.position + new Vector3(temp_x, 0, zPos), Quaternion.identity );
+                    GameObject enemy = Instantiate(rankedPrefabs[i][Random.Range(0, rankedPrefabs[i].Count)], transform.position + new Vector3(temp_x, zPos/2, zPos), Quaternion.identity );
                     enemy.GetComponent<TreeEnemy>().objectID = enemyID;
                 }
                 enemyID += 1;

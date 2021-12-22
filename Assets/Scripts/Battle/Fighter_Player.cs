@@ -9,13 +9,13 @@ public class Fighter_Player : Fighter_Base
     // Start is called before the first frame update
     override protected void Start()
     {
+        base.Start();
+        
         save = (SaveState)FindObjectOfType(typeof(SaveState));
         if ( save.playerCurrentHealth != null)
             currentHealth = save.playerCurrentHealth;
         if ( save.playerMaxHealth != null)
             maxHealth = save.playerMaxHealth;
-
-        base.Start();
     }
 
     // Update is called once per frame
