@@ -210,12 +210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d951f49bd7d004e9612a9429d681d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleName: Soldier
+  battleName: SwordSoldier
   enemyOptions:
   - {fileID: 0}
   - {fileID: 0}
   rank: 1
-  objectId: 1
+  objectID: 0
 --- !u!1 &8525848661877654737
 GameObject:
   m_ObjectHideFlags: 0

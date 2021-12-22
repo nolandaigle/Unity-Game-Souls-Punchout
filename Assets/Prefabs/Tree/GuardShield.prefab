@@ -133,7 +133,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rank: 0
-  objectId: 1
+  objectID: 0
 --- !u!1 &926538385236655487
 GameObject:
   m_ObjectHideFlags: 0

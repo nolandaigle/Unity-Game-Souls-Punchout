@@ -1,1 +1,1 @@
-{"playerClass":"Warrior","currentEnemy":"Soldier","playerMaxHealth":10,"playerCurrentHealth":10,"enemySelector":{"x":-5.0,"y":0.0,"z":5.0},"currentEnemyID":1,"charUnlock":1}
+{"playerClass":"Warrior","currentEnemy":"2HSoldier","playerMaxHealth":10,"playerCurrentHealth":8,"enemySelector":{"x":0.0,"y":0.0,"z":10.0},"currentEnemyID":4,"charUnlock":1}

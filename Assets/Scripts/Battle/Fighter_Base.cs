@@ -46,6 +46,8 @@ public class Fighter_Base : MonoBehaviour
 
     public DamageCounter damageCounter;
 
+    public bool staggerable = true;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -124,9 +126,10 @@ public class Fighter_Base : MonoBehaviour
     {
     	if ( currentState != State.Shielding && ( currentState != State.Dodging || type == "IgnoreDodge" ) )
         {
+            if ( staggerable || currentState == State.Standing  )
+                ChangeState(State.Hurt);
             aSource.clip = hurt;
             aSource.Play();
-            ChangeState(State.Hurt);
     		currentHealth -= damage;
         }
         else if ( currentState == State.Shielding )
