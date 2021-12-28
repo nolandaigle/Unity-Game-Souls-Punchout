@@ -13,42 +13,54 @@ public class EnemySelector : MonoBehaviour
 
     bool moving = false;
 
+    public SaveState save;
+
     // Start is called before the first frame update
     void Start()
     {
-        SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
+        save = (SaveState)FindObjectOfType(typeof(SaveState));
         player.position = save.enemySelector;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( Input.GetAxis("Horizontal") < 0 )
+        if ( save.boss == true )
         {
-            dir = -1;
-            transform.localPosition = new Vector3( -.6f, .6f, 0 );
-            transform.eulerAngles = new Vector3( 0, 0, 125 );
-        }
-        if ( Input.GetAxis("Horizontal") > 0 )
-        {
-            dir = 1;
-            transform.localPosition = new Vector3( .6f, .6f, 0 );
-            transform.eulerAngles = new Vector3( 0, 0, 45 );
-        }
-
-        if ( Input.GetButtonDown("Select") && moving == false )
-        {
-            moving = true;
-            SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
-            if ( dir == -1 )
+            if ( Input.GetButtonDown("Select") && moving == false )
             {
-                target = player.position + new Vector3( -5, 5/2, 5 );
-                save.enemySelector = target;
+                moving = true;
+                target = player.position + new Vector3( 0, 5/2, 5 );
             }
-            if ( dir == 1  )
+        }
+        else
+        {
+            if ( Input.GetAxis("Horizontal") < 0 )
             {
-                target = player.position + new Vector3( 5, 5/2, 5 );
-                save.enemySelector = target;
+                dir = -1;
+                transform.localPosition = new Vector3( -.6f, .6f, 0 );
+                transform.eulerAngles = new Vector3( 0, 0, 125 );
+            }
+            if ( Input.GetAxis("Horizontal") > 0 )
+            {
+                dir = 1;
+                transform.localPosition = new Vector3( .6f, .6f, 0 );
+                transform.eulerAngles = new Vector3( 0, 0, 45 );
+            }
+
+            if ( Input.GetButtonDown("Select") && moving == false )
+            {
+                moving = true;
+                if ( dir == -1 )
+                {
+                    target = player.position + new Vector3( -5, 5/2, 5 );
+                    save.enemySelector = target;
+                }
+                if ( dir == 1  )
+                {
+                    target = player.position + new Vector3( 5, 5/2, 5 );
+                    save.enemySelector = target;
+                }
             }
         }
 

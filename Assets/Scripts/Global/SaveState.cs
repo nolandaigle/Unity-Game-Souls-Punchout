@@ -20,6 +20,8 @@ public class SaveState : MonoBehaviour {
 
     public int charUnlock = 1;
 
+    public bool boss = false;
+
 
     private void Awake()
     {
@@ -46,21 +48,19 @@ public class SaveState : MonoBehaviour {
         {
             using (StreamReader reader = new StreamReader(path))
             {
-                SaveState output = JsonUtility.FromJson<SaveState>( reader.ReadToEnd() );
+                JsonUtility.FromJsonOverwrite( reader.ReadToEnd(), this );
 
                 reader.Close();
                 File.Delete(path);
 
                 //Load variables
-                playerClass = output.playerClass;
-                currentEnemy = output.currentEnemy;
-                enemySelector = output.enemySelector;
 
                 return "Success!";
             }
         }
         catch
         {
+            print(path);
             print("Could not load file.");
             return "Failure :(";
         }

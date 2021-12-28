@@ -214,7 +214,7 @@ MonoBehaviour:
   enemyOptions:
   - {fileID: 0}
   - {fileID: 0}
-  rank: 1
+  rank: 2
   objectID: 0
 --- !u!1 &8140916391886955295
 GameObject:

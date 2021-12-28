@@ -12,6 +12,8 @@ public class TreeEnemy : MonoBehaviour
 
     public int objectID;
 
+    public bool boss = false;
+
     // Start is called before the first frame update
     void Start()
     {

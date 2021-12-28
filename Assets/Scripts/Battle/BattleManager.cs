@@ -23,6 +23,8 @@ public class BattleManager : MonoBehaviour
 
     public int stages = 1;
 
+    public SaveState save;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,7 @@ public class BattleManager : MonoBehaviour
             enemyDictionary.Add( i.name, i.prefab );
         }
         
-        SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
+        save = (SaveState)FindObjectOfType(typeof(SaveState));
         string e = save.currentEnemy;
         
         LoadEnemy(e);
@@ -46,7 +48,13 @@ public class BattleManager : MonoBehaviour
             if ( endTimer > endTime )
             {
                 // SceneManager.LoadScene("Overworld");
-                SceneManager.LoadScene("BattleTree");
+                if ( save.boss == false )
+                    SceneManager.LoadScene("BattleTree");
+                else
+                {
+                    save.enemySelector = new Vector3(0,0,0);
+                    SceneManager.LoadScene("TitleScreen");                    
+                }
             }
         }
     }
