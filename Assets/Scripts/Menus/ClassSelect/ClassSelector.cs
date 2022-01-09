@@ -61,7 +61,10 @@ public class ClassSelector : MonoBehaviour
                 else if ( classSelected == -1 )
                     SaveClass("Mage");
                 isClassSelected = true;
-                SceneManager.LoadScene("BattleTree");
+                if ( save.level == 1 )
+                    SceneManager.LoadScene("BattleTree");
+                else if ( save.level == 2 )
+                    SceneManager.LoadScene("BattleTree-Level2");
             }
 
         }

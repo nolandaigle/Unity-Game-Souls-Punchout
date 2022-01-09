@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -148,7 +148,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159777640}
-  m_Text: Hello World
+  m_Text: Title
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -513,7 +513,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207670633}
-  m_Text: Hello World
+  m_Text: Title
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -833,7 +833,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118043192}
-  m_Text: Hello World
+  m_Text: Title
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

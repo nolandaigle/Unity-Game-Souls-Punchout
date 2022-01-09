@@ -49,11 +49,20 @@ public class BattleManager : MonoBehaviour
             {
                 // SceneManager.LoadScene("Overworld");
                 if ( save.boss == false )
-                    SceneManager.LoadScene("BattleTree");
+                {
+                    if ( save.level == 1 )
+                        SceneManager.LoadScene("BattleTree");
+                    else if ( save.level == 2 )
+                        SceneManager.LoadScene("BattleTree-Level2");                    
+                }
                 else
                 {
                     save.enemySelector = new Vector3(0,0,0);
-                    SceneManager.LoadScene("TitleScreen");                    
+                    if ( save.level == 1 )
+                    {
+                        save.level = 2;
+                        SceneManager.LoadScene("BattleTree-Level2");                    
+                    }
                 }
             }
         }

@@ -22,6 +22,8 @@ public class SaveState : MonoBehaviour {
 
     public bool boss = false;
 
+    public int level = 1;
+
 
     private void Awake()
     {
@@ -51,7 +53,6 @@ public class SaveState : MonoBehaviour {
                 JsonUtility.FromJsonOverwrite( reader.ReadToEnd(), this );
 
                 reader.Close();
-                File.Delete(path);
 
                 //Load variables
 
@@ -60,7 +61,6 @@ public class SaveState : MonoBehaviour {
         }
         catch
         {
-            print(path);
             print("Could not load file.");
             return "Failure :(";
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -460,7 +460,12 @@ PrefabInstance:
     - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
       propertyPath: EnemyPrefabs.Array.size
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[2].name
+      value: Skelly
       objectReference: {fileID: 0}
     - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
@@ -474,6 +479,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
+      propertyPath: EnemyPrefabs.Array.data[6].name
+      value: HammerMan
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 1822474613362257305, guid: 37a9f971a34754faeb187f588748a5c5,
+        type: 3}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
       propertyPath: EnemyPrefabs.Array.data[4].prefab
       value: 
       objectReference: {fileID: 3445755400734578990, guid: 6e7fdc88c97652a439abf2539dcc6f1e,
@@ -483,6 +499,12 @@ PrefabInstance:
       propertyPath: EnemyPrefabs.Array.data[5].prefab
       value: 
       objectReference: {fileID: 5990462893308572506, guid: c61ea997bff90e84681f6e02d58187e3,
+        type: 3}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 4066131143999972498, guid: d69f086abe91f4d1598c79be10e61971,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b818c7027931bf84c8745a6f042a37ba, type: 3}

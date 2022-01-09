@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 1bde983a14b45384eb57a3ea1d021d5e
+guid: de5c9120940314582b73c661ed8ce0d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2935629313618378404
-    second: EnemySkeleton_0
+      213: -6175081498545321822
+    second: HammerMan_0
   - first:
-      213: -7693831650002099781
-    second: EnemySkeleton_1
+      213: 3918335994545830399
+    second: HammerMan_1
   - first:
-      213: -2036219857568978129
-    second: EnemySkeleton_2
+      213: -3430356175209622007
+    second: HammerMan_2
   - first:
-      213: 4505931579121083398
-    second: EnemySkeleton_3
+      213: -4035363177755243084
+    second: HammerMan_3
   - first:
-      213: 6724886705490754544
-    second: EnemySkeleton_4
-  - first:
-      213: -4038992887052324576
-    second: EnemySkeleton_5
-  - first:
-      213: -3701081460236316029
-    second: EnemySkeleton_6
+      213: -1645032405479827020
+    second: HammerMan_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,7 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemySkeleton_0
+      name: HammerMan_0
       rect:
         serializedVersion: 2
         x: 0
@@ -122,14 +116,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ae727e9e437db820800000000000000
-      internalID: 2935629313618378404
+      spriteID: 2a88e141814bd4aa0800000000000000
+      internalID: -6175081498545321822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySkeleton_1
+      name: HammerMan_1
       rect:
         serializedVersion: 2
         x: 48
@@ -143,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb1a7f3c0e40a3590800000000000000
-      internalID: -7693831650002099781
+      spriteID: ff9f789a3d9b06630800000000000000
+      internalID: 3918335994545830399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySkeleton_2
+      name: HammerMan_2
       rect:
         serializedVersion: 2
         x: 96
@@ -164,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2b2101f3d4edb3e0800000000000000
-      internalID: -2036219857568978129
+      spriteID: 9061093cb3de460d0800000000000000
+      internalID: -3430356175209622007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySkeleton_3
+      name: HammerMan_3
       rect:
         serializedVersion: 2
         x: 144
@@ -185,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6042ab3d5e8488e30800000000000000
-      internalID: 4505931579121083398
+      spriteID: 4bd0532f1928ff7c0800000000000000
+      internalID: -4035363177755243084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySkeleton_4
+      name: HammerMan_4
       rect:
         serializedVersion: 2
         x: 192
@@ -206,50 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fbf58324d8935d50800000000000000
-      internalID: 6724886705490754544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemySkeleton_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 021bae46e5d92f7c0800000000000000
-      internalID: -4038992887052324576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemySkeleton_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38294d5650e13acc0800000000000000
-      internalID: -3701081460236316029
+      spriteID: 4b95e533ebbab29e0800000000000000
+      internalID: -1645032405479827020
       vertices: []
       indices: 
       edges: []
@@ -257,7 +209,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5b3d2c0a6bf0843e8bef65af07094de4
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

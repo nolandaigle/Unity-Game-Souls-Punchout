@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClassSelect.unity
     guid: 8675a33c135ea3b45a4981b280b3f2f2
+  - enabled: 1
+    path: Assets/Scenes/BattleTree-Level2.unity
+    guid: 275602d0411714916a5123cc8294a4bf
   m_configObjects: {}
