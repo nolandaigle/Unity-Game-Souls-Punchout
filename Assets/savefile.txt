@@ -1,1 +1,1 @@
-{"playerClass":"Warrior","currentEnemy":"SwordSoldier","playerMaxHealth":10,"playerCurrentHealth":10,"enemySelector":{"x":5.0,"y":6.0,"z":15.0},"currentEnemyID":8,"charUnlock":1,"boss":false,"level":2}
+{"playerClass":"Warrior","currentEnemy":"BirdBoss","playerMaxHealth":10,"playerCurrentHealth":10,"enemySelector":{"x":0.0,"y":0.0,"z":0.0},"currentEnemyID":0,"charUnlock":1,"boss":false,"level":1}

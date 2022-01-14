@@ -22,6 +22,8 @@ public class ClassSelector : MonoBehaviour
 
     SaveState save;
 
+    bool paused = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,7 @@ public class ClassSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( !isClassSelected )
+        if ( !isClassSelected && !paused )
         {
             if ( Input.GetAxis("Horizontal") > 0 )
             {
@@ -78,11 +80,21 @@ public class ClassSelector : MonoBehaviour
         else if ( t >= 1)
         {
             t = -1;
+            StartCoroutine(waiter());
+        }
+    }
+
+    IEnumerator waiter()
+    {
+        if ( ( save.charUnlock < 2 && classSelected == -1 ) || ( save.charUnlock < 3 && classSelected == 1 ) )
+        {
+            yield return new WaitForSeconds(.5f);
+            SwitchTo(0);
+        }
+        else
+        {
             BroadcastMessage("StartBounce", true);
-            if ( ( save.charUnlock < 2 && classSelected == -1 ) || ( save.charUnlock < 3 && classSelected == 1 ) )
-            {
-                    SwitchTo(0);
-            }
+            paused = false;
         }
     }
 
@@ -97,6 +109,7 @@ public class ClassSelector : MonoBehaviour
         start = transform.position.x;
         end = 20*toSelect;
         t = 0;
+        paused = true;
         BroadcastMessage("StopBounce");
         buttonDown = true;
     }

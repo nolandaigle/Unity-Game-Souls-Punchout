@@ -61,6 +61,9 @@ public class BattleManager : MonoBehaviour
                     if ( save.level == 1 )
                     {
                         save.level = 2;
+                        save.playerCurrentHealth = save.playerMaxHealth;
+                        save.boss = false;
+                        save.SaveFile();
                         SceneManager.LoadScene("BattleTree-Level2");                    
                     }
                 }

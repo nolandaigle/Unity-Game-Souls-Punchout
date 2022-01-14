@@ -11,7 +11,7 @@ public class Fighter_Skelly : Fighter_Base
     AIState aiState = AIState.Blocking;
 
     float healthTimer = 0;
-    float healthTime = 3;
+    float healthTime = 4;
 
     // Start is called before the first frame update
     override protected void Start()
