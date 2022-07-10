@@ -57,17 +57,17 @@ public class Staff : Weapon
         }
     }
 
-    override public int GetDamage()
+    override public float GetDamage()
     {
         running = false;
-        int dmg = Mathf.RoundToInt(Mathf.Abs(magicBar.GetBarVal()*10f));
+        float dmg = Mathf.Abs(magicBar.GetBarVal()*10f);
         return dmg;
     }
 
-    override public int GetHeal()
+    override public float GetHeal()
     {
         running = false;
-        int dmg = Mathf.RoundToInt(Mathf.Abs(magicBar.GetBarVal()*10f));
+        float dmg = Mathf.Abs(magicBar.GetBarVal()*10f);
         return dmg;
     }
 

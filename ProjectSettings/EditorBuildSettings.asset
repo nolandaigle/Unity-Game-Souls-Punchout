@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleTree-Level2.unity
     guid: 275602d0411714916a5123cc8294a4bf
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: a9ded77a46e124905b61c6dacc14a247
+  - enabled: 1
+    path: Assets/Scenes/Astrology.unity
+    guid: 745682b936a904bea913e6a05dbddb00
   m_configObjects: {}

@@ -23,20 +23,21 @@ public class Fighter_Base : MonoBehaviour
 	public enum State { Standing, RightHandPrep, RightHandHit, LeftHandPrep, LeftHandHit, Shielding, Hurt, Dodging, Dead };
 	protected State currentState = State.Standing;
 
-    float hurtRecover = 1f;
-    float dodgeTime = .75f;
+    protected float hurtRecover = 1f;
+    protected float dodgeTime = .75f;
 
     //Health stuff
-	public int maxHealth = 10;
-	protected int currentHealth = 10;
+	public float maxHealth = 10;
+	protected float currentHealth = 10;
+    protected float damageScale = 1;
 
     //Stamina stuff
-	public int maxStamina = 10;
-	protected int currentStamina = 10;
+	public float maxStamina = 10;
+	protected float currentStamina = 10;
     public float staminaTimer = 0;
     public float staminaTime = .5f;
 
-    public int dodgeCost = 5;
+    public float dodgeCost = 5;
 
 
 	public Fighter_Base enemy;
@@ -47,6 +48,8 @@ public class Fighter_Base : MonoBehaviour
     public DamageCounter damageCounter;
 
     public bool staggerable = true;
+
+    private string astrology = "";
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -61,6 +64,10 @@ public class Fighter_Base : MonoBehaviour
 
         currentStamina = maxStamina;
         currentHealth = maxHealth;
+
+
+        SaveState save= (SaveState)FindObjectOfType(typeof(SaveState));
+        astrology = save.astrology;
     }
 
     // Update is called once per frame
@@ -109,7 +116,7 @@ public class Fighter_Base : MonoBehaviour
         }
     }
 
-    void Attack( int damage, string type )
+    void Attack( float damage, string type )
     {
         if ( type == "healing" )
             Heal(damage);
@@ -117,7 +124,7 @@ public class Fighter_Base : MonoBehaviour
         	enemy.Hurt(damage, type);
     }
 
-    public void SapStamina(int amount)
+    public void SapStamina(float amount)
     {
         currentStamina -= amount;
         if ( currentStamina < 0 )
@@ -126,7 +133,7 @@ public class Fighter_Base : MonoBehaviour
         }
     }
 
-    public void Hurt(int damage, string type )
+    public void Hurt(float damage, string type )
     {
     	if ( ( currentState != State.Shielding  || type == "IgnoreBlock"  ) 
         && ( currentState != State.Dodging || type == "IgnoreDodge" ) )
@@ -135,11 +142,13 @@ public class Fighter_Base : MonoBehaviour
                 ChangeState(State.Hurt);
             aSource.clip = hurt;
             aSource.Play();
-    		currentHealth -= damage;
+    		currentHealth -= damage*damageScale;
         }
         else if ( currentState == State.Shielding )
         {
-            int shieldedDamage = Mathf.RoundToInt(damage/2);
+            float shieldedDamage = damage/2;
+            if ( astrology == "scorpio" )
+                shieldedDamage = damage/4;
             currentHealth -= shieldedDamage;
             currentStamina -= shieldedDamage;
             enemy.SapStamina(10);
@@ -156,7 +165,7 @@ public class Fighter_Base : MonoBehaviour
         damageCounter.Cancel();
     }
 
-    protected void Die()
+    public virtual void Die()
     {
         if ( currentState != State.Dead )
         {
@@ -185,8 +194,8 @@ public class Fighter_Base : MonoBehaviour
         	else if ( currentStamina >= leftHand.GetStaminaCost() )
             {
                 currentStamina -= leftHand.GetStaminaCost();
-                if ( rightHand.GetWeaponType() == "sword" )
-                    damageCounter.Roll(leftHand.GetDamage(), .1f);
+                // if ( rightHand.GetWeaponType() == "sword" )
+                //     damageCounter.Roll(leftHand.GetDamage(), .1f);
             	ChangeState(State.LeftHandPrep);
             }
         }
@@ -199,8 +208,8 @@ public class Fighter_Base : MonoBehaviour
             if ( currentStamina >= rightHand.GetStaminaCost() )
             {
                 currentStamina -= rightHand.GetStaminaCost();
-                if ( rightHand.GetWeaponType() == "sword" )
-                    damageCounter.Roll(rightHand.GetDamage(), .1f);
+                // if ( rightHand.GetWeaponType() == "sword" )
+                //     damageCounter.Roll(rightHand.GetDamage(), .1f);
             	ChangeState(State.RightHandPrep);
             }
         }
@@ -211,7 +220,7 @@ public class Fighter_Base : MonoBehaviour
     	ChangeState(State.Standing);
     }
 
-    void ChangeState( State newState )
+    public void ChangeState( State newState )
     {
         stateTimer = 0;
     	anim.Play(newState.ToString());
@@ -238,7 +247,7 @@ public class Fighter_Base : MonoBehaviour
             ChangeState(State.LeftHandHit);
     }
 
-    public virtual void Heal(int amount)
+    public virtual void Heal(float amount)
     {
         currentHealth += amount;
         if ( currentHealth > maxHealth )
@@ -251,22 +260,22 @@ public class Fighter_Base : MonoBehaviour
         fighting = false;
     }
 
-    public int GetMaxHealth()
+    public float GetMaxHealth()
     {
     	return maxHealth;
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
     	return currentHealth;
     }
 
-    public int GetMaxStamina()
+    public float GetMaxStamina()
     {
     	return maxStamina;
     }
 
-    public int GetCurrentStamina()
+    public float GetCurrentStamina()
     {
     	return currentStamina;
     }

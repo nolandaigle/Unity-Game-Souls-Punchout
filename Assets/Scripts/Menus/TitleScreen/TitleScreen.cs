@@ -17,10 +17,27 @@ public class TitleScreen : MonoBehaviour
     public Transform journal;
     public Transform background;
 
+    public Transform cam;
+
+    private SaveState save;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        save = (SaveState)FindObjectOfType(typeof(SaveState));
+        save.LoadFile();
+
         screenFade.color = new Color( 0, 0, 0, 0);
+
+        if ( save.dead == true )
+        {
+            cam.eulerAngles = new Vector3( 0, -180, 0 );
+        }
+        else
+        {
+            cam.eulerAngles = new Vector3( 0, 0, 0 );
+        }
     }
 
     // Update is called once per frame
@@ -33,7 +50,19 @@ public class TitleScreen : MonoBehaviour
         	if ( a >= 1 )
         	{
         		a = 1;
-        		SceneManager.LoadScene("Intro");
+                if ( save.dead )
+                {
+                    save.Reset();
+                    save.SaveFile();
+                    SceneManager.LoadScene("Intro");
+                }
+                else
+                {
+                    if ( save.level == 1 )
+                    SceneManager.LoadScene("BattleTree");
+                    else if ( save.level == 2 )
+                        SceneManager.LoadScene("BattleTree-Level2");
+                }
         	}
         	else
         	{

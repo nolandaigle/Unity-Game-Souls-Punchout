@@ -10,6 +10,7 @@ public class BattleManager : MonoBehaviour
     public float endTime = 3;
 
     bool battleOver = false;
+    bool playerDead = false;
 
     [Serializable]
     public struct Prefabs {
@@ -47,8 +48,12 @@ public class BattleManager : MonoBehaviour
             endTimer += Time.deltaTime;
             if ( endTimer > endTime )
             {
+                if ( playerDead == true )
+                {
+                    SceneManager.LoadScene("TitleScreen");
+                }            
                 // SceneManager.LoadScene("Overworld");
-                if ( save.boss == false )
+                else if ( save.boss == false )
                 {
                     if ( save.level == 1 )
                         SceneManager.LoadScene("BattleTree");
@@ -60,6 +65,7 @@ public class BattleManager : MonoBehaviour
                     save.enemySelector = new Vector3(0,0,0);
                     if ( save.level == 1 )
                     {
+                        save.tree = null;
                         save.level = 2;
                         save.playerCurrentHealth = save.playerMaxHealth;
                         save.boss = false;
@@ -71,11 +77,17 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void EndBattle()
+    public void EndBattle(bool dead = false)
     {
         if ( stages == 1 )
         {
             battleOver = true;
+            if ( dead )
+            {
+                playerDead = true;
+                save.dead = true;
+                save.SaveFile();
+            }
             BroadcastMessage("StopFighting");
         }
         else

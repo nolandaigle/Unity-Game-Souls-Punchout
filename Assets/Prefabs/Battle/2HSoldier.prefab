@@ -923,8 +923,8 @@ MonoBehaviour:
   bm: {fileID: 0}
   anim: {fileID: 3445755399502774630}
   aSource: {fileID: 3445755400734580433}
-  hurt: {fileID: 0}
-  dodge: {fileID: 0}
+  hurt: {fileID: 8300000, guid: 9f93ecb1b685846659476b5da64b70f0, type: 3}
+  dodge: {fileID: 8300000, guid: f8fa4a69fd93645f7acdb50391fedcc4, type: 3}
   maxHealth: 15
   maxStamina: 10
   staminaTimer: 0
@@ -1202,6 +1202,7 @@ MonoBehaviour:
   effectMin: 1
   effectMax: 6
   staminaCost: 5
+  player: 0
 --- !u!1 &3445755401214175811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,3 +1420,4 @@ MonoBehaviour:
   effectMin: 6
   effectMax: 8
   staminaCost: 5
+  player: 0

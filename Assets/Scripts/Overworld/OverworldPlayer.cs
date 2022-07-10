@@ -11,8 +11,8 @@ public class OverworldPlayer : MonoBehaviour
     public float speed = 5;
     Vector3 moveDir = Vector3.zero;
 
-    int currentHealth;
-    int maxHealth;
+    float currentHealth;
+    float maxHealth;
 
     SaveState save;
 
@@ -55,12 +55,12 @@ public class OverworldPlayer : MonoBehaviour
         cc.Move(moveDir*speed*Time.deltaTime);
     }
 
-    public int GetMaxHealth()
+    public float GetMaxHealth()
     {
     	return maxHealth;
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
     	return currentHealth;
     }

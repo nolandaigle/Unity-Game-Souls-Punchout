@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -85,6 +85,7 @@ public class TextRead : MonoBehaviour
     public void SetText(string newText)
     {
     	text = newText;
+    	textTimer = 0;
     	currentChar = 0;
     	done = false;
     	textmesh.text = "";

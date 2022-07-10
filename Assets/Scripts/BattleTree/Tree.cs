@@ -46,18 +46,30 @@ public class Tree : MonoBehaviour
             int currentRow = 0;
             int enemyID = 1;
             
-            Random.seed = 2;
+            bool newTree = false;
+            int current = 0;
+            if ( save.tree == null )
+            {
+            	newTree = true;
+            	save.tree = new int[10];
+        	}
+
             for ( int i = 0; i < rankedPrefabs.Count; i++ )
             {
                 for ( int j = 0; j < 2+currentRow; j++ )
                 {
                     if ( enemyID != lastEnemyID && save.enemySelector.z < zPos )
                     {
+                    	if ( newTree )
+                    	{
+                    		save.tree[current] = Random.Range(0, rankedPrefabs[i].Count);
+                    	}
                         int temp_x = 10*j - ( (1+currentRow)*10/2 );
-                        GameObject enemy = Instantiate(rankedPrefabs[i][Random.Range(0, rankedPrefabs[i].Count)], transform.position + new Vector3(temp_x, zPos/2, zPos), Quaternion.identity );
+                        GameObject enemy = Instantiate(rankedPrefabs[i][save.tree[current]], transform.position + new Vector3(temp_x, zPos/2, zPos), Quaternion.identity );
                         enemy.GetComponent<TreeEnemy>().objectID = enemyID;
                     }
                     enemyID += 1;
+                    current += 1;
                 }
                 zPos += 5;
                 currentRow += 1;

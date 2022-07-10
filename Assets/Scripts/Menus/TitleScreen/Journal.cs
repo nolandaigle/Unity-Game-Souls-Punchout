@@ -54,10 +54,14 @@ public class Journal : MonoBehaviour
         	{
         		text.SetText("Very  aggressive.  I  find  the  best  way  to  get  them  is  by  blocking  their  attacks.  After  a  block,  they  seem  to  lose  their  stamina.\n\n Then,  I  like  to  hit  them  with  a  nice  sword  thrust  to  the  face.");
         	}
-        	else if ( journalOptions.GetSelected() == "Two-Handed Fighter" )
+        	else if ( journalOptions.GetSelected() == "Knight" )
         	{
         		text.SetText("Kind  of  a  jerk.  Their  sword  hurts  real  bad.  But  I've  noticed  I  can  interrupt  their  sword  attack  with  a  nice  sword  thrust  to  the  face.\n\n It  seems,  in  this  dream,  that  most  problems  can  be  solved  with  a  nice  sword  thrust  to  the  face.");
         	}
+            else if ( journalOptions.GetSelected() == "Witch" )
+            {
+                text.SetText("They  don't  talk  much.  Their  magic  attacks  bust  right  through  my  shield...  Kinda  reminds  me  of  my  mom?");
+            }
     	}
     }
 }

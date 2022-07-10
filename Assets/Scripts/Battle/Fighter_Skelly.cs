@@ -24,8 +24,6 @@ public class Fighter_Skelly : Fighter_Base
     {
         if ( currentState != State.Dead )
         {
-
-        	print(healthTimer);
         	healthTimer += Time.deltaTime;
         	if ( healthTimer > healthTime )
         	{

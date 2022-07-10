@@ -113,7 +113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8162187615042574831
 Transform:
   m_ObjectHideFlags: 0
@@ -797,6 +797,7 @@ MonoBehaviour:
   effectMin: 1
   effectMax: 1
   staminaCost: 2
+  player: 0
 --- !u!1 &8162187616089023311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1065,7 @@ MonoBehaviour:
   effectMin: 1
   effectMax: 6
   staminaCost: 5
+  player: 0
 --- !u!1 &8162187616816609504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,8 +1213,8 @@ MonoBehaviour:
   bm: {fileID: 0}
   anim: {fileID: 8162187615633039528}
   aSource: {fileID: 8162187616816611103}
-  hurt: {fileID: 0}
-  dodge: {fileID: 0}
+  hurt: {fileID: 8300000, guid: 9f93ecb1b685846659476b5da64b70f0, type: 3}
+  dodge: {fileID: 8300000, guid: f8fa4a69fd93645f7acdb50391fedcc4, type: 3}
   maxHealth: 10
   maxStamina: 10
   staminaTimer: 0
@@ -1222,6 +1224,7 @@ MonoBehaviour:
   rightHand: {fileID: 8162187616430125505}
   leftHand: {fileID: 2108201767993840013}
   damageCounter: {fileID: 8162187615042574830}
+  staggerable: 1
   aiTime: 1.25
 --- !u!1 &8162187616997240076
 GameObject:

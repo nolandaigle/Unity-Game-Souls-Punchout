@@ -11,8 +11,8 @@ public class SaveState : MonoBehaviour {
     public string playerClass = "nodata";
     public string currentEnemy = "nodata";
 
-    public int playerMaxHealth = 10;
-    public int playerCurrentHealth = 10;
+    public float playerMaxHealth = 10;
+    public float playerCurrentHealth = 10;
 
     public Vector3 enemySelector = Vector3.zero;
 
@@ -23,6 +23,12 @@ public class SaveState : MonoBehaviour {
     public bool boss = false;
 
     public int level = 1;
+
+    public bool dead = false;
+
+    public int[] tree = null;
+
+    public string astrology = "sagittarius";
 
 
     private void Awake()
@@ -36,7 +42,7 @@ public class SaveState : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
 
         LoadFile();
-        print(enemySelector);
+        tree = null;
     }
 
     public void Start()
@@ -87,5 +93,21 @@ public class SaveState : MonoBehaviour {
             writer.Write(JsonUtility.ToJson(this));
             writer.Close();
         }
+    }
+
+    public void Reset()
+    {
+        playerCurrentHealth = playerMaxHealth;
+        enemySelector = Vector3.zero;
+        playerClass = "nodata";
+        currentEnemy = "nodata";
+        currentEnemyID = -1;
+        boss = false;
+        level = 1;
+        dead = false;
+        tree = null;
+
+        string[] astrologyChoices = {"aries", "sagittarius", "leo", "virgo", "taurus", "capricorn", "libra", "aquarius", "gemini", "pisces", "cancer", "scorpio"};
+        astrology = astrologyChoices[Random.Range(0, astrologyChoices.Length)];
     }
 }

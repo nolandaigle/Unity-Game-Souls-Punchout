@@ -712,7 +712,7 @@ MonoBehaviour:
   aSource: {fileID: 1841852387}
   blip: {fileID: 8300000, guid: 8c20d7f4a7dcf46ed9c4c2a7d2351bf4, type: 3}
   end: {fileID: 8300000, guid: 1cfa92baa23a0429085d23c2404df59a, type: 3}
-  nextScene: ClassSelect
+  nextScene: Astrology
 --- !u!82 &1841852387
 AudioSource:
   m_ObjectHideFlags: 0
