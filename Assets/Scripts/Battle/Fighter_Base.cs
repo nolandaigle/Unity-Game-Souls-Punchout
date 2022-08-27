@@ -15,6 +15,7 @@ public class Fighter_Base : MonoBehaviour
     public AudioSource aSource;
     public AudioClip hurt;
     public AudioClip dodge;
+    public AudioClip swing;
 
     //State stuff
     float stateTimer = 0f;
@@ -197,6 +198,8 @@ public class Fighter_Base : MonoBehaviour
                 // if ( rightHand.GetWeaponType() == "sword" )
                 //     damageCounter.Roll(leftHand.GetDamage(), .1f);
             	ChangeState(State.LeftHandPrep);
+                aSource.clip = swing;
+                aSource.Play();
             }
         }
     }
@@ -211,6 +214,8 @@ public class Fighter_Base : MonoBehaviour
                 // if ( rightHand.GetWeaponType() == "sword" )
                 //     damageCounter.Roll(rightHand.GetDamage(), .1f);
             	ChangeState(State.RightHandPrep);
+                aSource.clip = swing;
+                aSource.Play();
             }
         }
     }

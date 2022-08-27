@@ -31,7 +31,6 @@ public class Staff : Weapon
             inputTimer += Time.deltaTime;
             if ( Input.GetButtonDown("RightHandAction") && inputTimer > .1f )
             {
-                print(spellPhase);
                 inputTimer = 0;
                 CastSpell(spellPhase);
             }
@@ -48,7 +47,6 @@ public class Staff : Weapon
         }
         else
         {
-            print("asdf");
             spellPhase = 1;
             running = false;
             magicBar.StopBar();

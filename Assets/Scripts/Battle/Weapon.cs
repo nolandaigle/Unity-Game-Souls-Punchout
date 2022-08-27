@@ -47,6 +47,11 @@ public class Weapon : MonoBehaviour
         {
             effectMax += 2f;
         }
+
+        if ( save.activePlanet == "Mercury" )
+        {
+            chargeTime = chargeTime/2;
+        }
     }
 
     // Update is called once per frame

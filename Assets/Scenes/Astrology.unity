@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,7 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: sagittarius
-  save: {fileID: 0}
 --- !u!212 &23351711
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -216,7 +215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &23474541
 GameObject:
@@ -250,7 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: libra
-  save: {fileID: 0}
 --- !u!212 &23474543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -313,7 +311,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155211189
 GameObject:
@@ -347,7 +345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: gemini
-  save: {fileID: 0}
 --- !u!212 &155211191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -410,20 +407,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &377082391 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7583053146724154064, guid: e4ff3fc993c52954fbad5149045e0a99,
-    type: 3}
-  m_PrefabInstance: {fileID: 1905292789}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49af5b2a9b485bc498fdee14691421af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &430442704
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +441,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: scorpio
-  save: {fileID: 0}
 --- !u!212 &430442706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -519,7 +503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &563841216
 GameObject:
@@ -553,7 +537,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: leo
-  save: {fileID: 0}
 --- !u!212 &563841218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -616,7 +599,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &617115758
 GameObject:
@@ -650,7 +633,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: aquarius
-  save: {fileID: 0}
 --- !u!212 &617115760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -713,7 +695,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649488486
 GameObject:
@@ -747,7 +729,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: aries
-  save: {fileID: 377082391}
 --- !u!212 &649488488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -810,7 +791,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1134,7 +1115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: capricorn
-  save: {fileID: 0}
 --- !u!212 &963868570
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1197,7 +1177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012464825
 GameObject:
@@ -1231,7 +1211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: pisces
-  save: {fileID: 0}
 --- !u!212 &1012464827
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1294,7 +1273,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1092458287
 GameObject:
@@ -1328,7 +1307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: virgo
-  save: {fileID: 0}
 --- !u!212 &1092458289
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1391,7 +1369,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370981771
 GameObject:
@@ -1533,7 +1511,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: cancer
-  save: {fileID: 0}
 --- !u!212 &1803546584
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1596,7 +1573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1877478719
 GameObject:
@@ -1630,7 +1607,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: astrology
   value: taurus
-  save: {fileID: 0}
 --- !u!212 &1877478721
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1693,74 +1669,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1905292789
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7583053146724154065, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_Name
-      value: Global
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583053146724154079, guid: e4ff3fc993c52954fbad5149045e0a99,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e4ff3fc993c52954fbad5149045e0a99, type: 3}

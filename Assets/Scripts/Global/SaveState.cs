@@ -29,6 +29,10 @@ public class SaveState : MonoBehaviour {
     public int[] tree = null;
 
     public string astrology = "sagittarius";
+    
+    public string currentPlanet = "Sun";
+
+    public string activePlanet = "none";
 
 
     private void Awake()
@@ -59,8 +63,6 @@ public class SaveState : MonoBehaviour {
                 JsonUtility.FromJsonOverwrite( reader.ReadToEnd(), this );
 
                 reader.Close();
-
-                //Load variables
 
                 return "Success!";
             }
@@ -97,6 +99,8 @@ public class SaveState : MonoBehaviour {
 
     public void Reset()
     {
+        print("asdf");
+        activePlanet = "none";
         playerCurrentHealth = playerMaxHealth;
         enemySelector = Vector3.zero;
         playerClass = "nodata";

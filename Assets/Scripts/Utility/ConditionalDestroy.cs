@@ -6,7 +6,8 @@ public class ConditionalDestroy : MonoBehaviour
 {
 	public string condition = "";
 	public string value = "";
-	public SaveState save;
+
+	private SaveState save;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,13 @@ public class ConditionalDestroy : MonoBehaviour
         	case "astrology":
         		if (save.astrology != value)
         			Destroy(this.gameObject);
-        			break;
+        		break;
+            case "currentPlanet":
+                if (save.currentPlanet != value)
+        			Destroy(this.gameObject);
+                save.activePlanet = save.currentPlanet;
+                save.SaveFile();
+        		break;
 
         }
         // string conditionBool = save.GetType().GetProperty(condition);

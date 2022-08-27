@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,6 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 88708035}
   smoothTime: 0.5
+  rotSmoothTime: 0.1
+  rotDelay: 1
 --- !u!4 &17458067
 Transform:
   m_ObjectHideFlags: 0
@@ -796,6 +798,7 @@ GameObject:
   - component: {fileID: 2140495107}
   - component: {fileID: 2140495108}
   - component: {fileID: 2140495109}
+  - component: {fileID: 2140495110}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -883,3 +886,17 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   smoothTime: 0.3
   save: {fileID: 0}
+--- !u!114 &2140495110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140495106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71dba5362442041b99338b2eec5b3834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: boss
+  value: false

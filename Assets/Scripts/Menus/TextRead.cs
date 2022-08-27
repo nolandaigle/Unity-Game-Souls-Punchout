@@ -94,6 +94,19 @@ public class TextRead : MonoBehaviour
     IEnumerator waiter()
     {
             yield return new WaitForSeconds(.5f);
-            SceneManager.LoadScene(nextScene);
+			if ( nextScene != "Tree" )
+	            SceneManager.LoadScene(nextScene);
+			else
+			{
+				
+        		SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
+
+				if ( save.level == 1 )
+                        SceneManager.LoadScene("BattleTree");
+				else if ( save.level == 2 )
+					SceneManager.LoadScene("BattleTree-Level2");    
+				else if ( save.level == 3 )
+					SceneManager.LoadScene("BattleTree-Level3");  
+			}
     }
 }

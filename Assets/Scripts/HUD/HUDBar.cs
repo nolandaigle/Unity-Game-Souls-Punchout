@@ -29,7 +29,6 @@ public class HUDBar : MonoBehaviour
         }
         else
         {
-            print((float)player.GetCurrentHealth()+" "+(float)player.GetMaxHealth());
             if ( stat == "health")
                 actualStat.localScale = new Vector3( ( ((float)player.GetCurrentHealth()/(float)player.GetMaxHealth())*statBar.localScale.x )-(.01f*(float)player.GetCurrentHealth()), statBar.localScale.y-.1f, statBar.localScale.z );
         }

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TreeEnemy : MonoBehaviour
 {
+    public RandomGen planetGen;
+    
     public string battleName = "Soldier";
     public Transform[] enemyOptions;
 
@@ -22,17 +24,19 @@ public class TreeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if ( other.gameObject.tag == "Player")
         {
-            print("This: "+gameObject.name+" You: "+other.gameObject.name);
             SaveState save = (SaveState)FindObjectOfType(typeof(SaveState));
             save.currentEnemyID = objectID;
             save.currentEnemy = battleName;
+            if ( planetGen )
+                save.currentPlanet = planetGen.GetSelected();
+            else
+                save.currentPlanet = "none";
             save.SaveFile();
             SceneManager.LoadScene("Battle");
         }

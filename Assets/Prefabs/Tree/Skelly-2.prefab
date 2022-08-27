@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 318011938922052750}
   - {fileID: 5849909119629424299}
+  - {fileID: 8838578765922678418}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d951f49bd7d004e9612a9429d681d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetGen: {fileID: 5090140806787896166}
   battleName: Skelly
   enemyOptions:
   - {fileID: 0}
@@ -298,3 +300,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &8447042075934637175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3786888331289541481}
+    m_Modifications:
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155311264625542476, guid: 7d5fc26b83492d9479a33b6754475b6c,
+        type: 3}
+      propertyPath: m_Name
+      value: Planets
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d5fc26b83492d9479a33b6754475b6c, type: 3}
+--- !u!4 &8838578765922678418 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1121709172178356965, guid: 7d5fc26b83492d9479a33b6754475b6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8447042075934637175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5090140806787896166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3718350532625870609, guid: 7d5fc26b83492d9479a33b6754475b6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8447042075934637175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560b27d417ecd294c95dc4471bdea412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

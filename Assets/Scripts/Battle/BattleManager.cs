@@ -55,10 +55,7 @@ public class BattleManager : MonoBehaviour
                 // SceneManager.LoadScene("Overworld");
                 else if ( save.boss == false )
                 {
-                    if ( save.level == 1 )
-                        SceneManager.LoadScene("BattleTree");
-                    else if ( save.level == 2 )
-                        SceneManager.LoadScene("BattleTree-Level2");                    
+                        SceneManager.LoadScene("Planet");                 
                 }
                 else
                 {
@@ -71,6 +68,15 @@ public class BattleManager : MonoBehaviour
                         save.boss = false;
                         save.SaveFile();
                         SceneManager.LoadScene("BattleTree-Level2");                    
+                    }
+                    else if ( save.level == 2 )
+                    {
+                        save.tree = null;
+                        save.level = 3;
+                        save.playerCurrentHealth = save.playerMaxHealth;
+                        save.boss = false;
+                        save.SaveFile();
+                        SceneManager.LoadScene("BattleTree-Level3");
                     }
                 }
             }
