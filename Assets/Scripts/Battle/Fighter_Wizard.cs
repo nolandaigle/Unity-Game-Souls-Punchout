@@ -40,7 +40,7 @@ public class Fighter_Wizard : Fighter_Base
         }
         else  if ( currentStamina >= rightHand.GetStaminaCost() )
         {
-            if ( Random.Range(0, 10) > 5 )
+            if ( Random.Range(0, 10) > 5 || currentHealth >= maxHealth )
             {
                 RightHandAction();
             }
@@ -51,7 +51,7 @@ public class Fighter_Wizard : Fighter_Base
         }
         else
         {
-            if ( currentStamina >= leftHand.GetStaminaCost() && Random.Range(0, 10) > 8 )
+            if ( currentStamina >= leftHand.GetStaminaCost() && Random.Range(0, 10) > 8 && currentHealth < maxHealth  )
             {
                 LeftHandAction();
             }

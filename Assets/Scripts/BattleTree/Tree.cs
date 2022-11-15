@@ -31,9 +31,13 @@ public class Tree : MonoBehaviour
         for ( int i = 0; i < nodePrefabs.Length; i++ )
         {
             if ( rankedPrefabs.ContainsKey(nodePrefabs[i].GetComponent<TreeEnemy>().rank ) )
+            {
+                print("1"+nodePrefabs[i]);
                 rankedPrefabs[nodePrefabs[i].GetComponent<TreeEnemy>().rank].Add(nodePrefabs[i] );
+            }
             else
             {
+                print("2"+nodePrefabs[i]);
                 rankedPrefabs.Add( nodePrefabs[i].GetComponent<TreeEnemy>().rank, new List<GameObject>() );
                 rankedPrefabs[nodePrefabs[i].GetComponent<TreeEnemy>().rank].Add(nodePrefabs[i] );
             }
@@ -54,6 +58,8 @@ public class Tree : MonoBehaviour
             	save.tree = new int[10];
         	}
 
+            print(rankedPrefabs[0]);
+
             for ( int i = 0; i < rankedPrefabs.Count; i++ )
             {
                 for ( int j = 0; j < 2+currentRow; j++ )
@@ -62,11 +68,13 @@ public class Tree : MonoBehaviour
                     {
                     	if ( newTree )
                     	{
+                            print("new");
                     		save.tree[current] = Random.Range(0, rankedPrefabs[i].Count);
                     	}
                         int temp_x = 10*j - ( (1+currentRow)*10/2 );
                         GameObject enemy = Instantiate(rankedPrefabs[i][save.tree[current]], transform.position + new Vector3(temp_x, zPos/2, zPos), Quaternion.identity );
                         enemy.GetComponent<TreeEnemy>().objectID = enemyID;
+                        enemy.GetComponent<TreeEnemy>().planetGen.seed = (int)Mathf.Round(enemy.transform.position.x);
                     }
                     enemyID += 1;
                     current += 1;

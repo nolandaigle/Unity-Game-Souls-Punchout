@@ -542,22 +542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Every  night,  I  dream  I  am  being  chased  by  monsters.
-
-
-    I 
-    used  to  try  to  run  from  them.
-
-
-    Then,  I   tried  to  hide.
-
-
-    After 
-    a  while,  I  tried  letting  them catch  me.    Kill  me.    Watched  them 
-    eat my body.
-
-
-    Next, i figure, i''ll fight them.'
+  m_text: "Journal entry 001\n\n\tI'm  still  fighting  these damn monsters.\n\n\n\n-nolan"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fd2d31a3574fff84d9a6d15821ac7ccc, type: 2}
   m_sharedMaterial: {fileID: 6485641419730106768, guid: fd2d31a3574fff84d9a6d15821ac7ccc,

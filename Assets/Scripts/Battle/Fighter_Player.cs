@@ -6,6 +6,9 @@ public class Fighter_Player : Fighter_Base
 {
     SaveState save;
 
+    float healthTimer = 0;
+    float healthTime = 4;
+
     // Start is called before the first frame update
     override protected void Start()
     {
@@ -54,6 +57,17 @@ public class Fighter_Player : Fighter_Base
     // Update is called once per frame
     override protected void Update()
     {
+        if ( save.activePlanet == "Jupiter" )
+        {
+            healthTimer += Time.deltaTime;
+        	if ( healthTimer > healthTime )
+        	{
+        		if ( currentHealth < maxHealth )
+	        		currentHealth += 1;
+	        	healthTimer = 0;
+        	}
+        }
+
         if ( currentState != State.Dead )
         {
             if ( Input.GetButtonDown("RightHandAction") )

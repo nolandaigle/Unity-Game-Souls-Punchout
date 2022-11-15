@@ -62,6 +62,8 @@ public class TitleScreen : MonoBehaviour
                     SceneManager.LoadScene("BattleTree");
                     else if ( save.level == 2 )
                         SceneManager.LoadScene("BattleTree-Level2");
+                    else if ( save.level == 3 )
+                        SceneManager.LoadScene("BattleTree-Level3");
                 }
         	}
         	else

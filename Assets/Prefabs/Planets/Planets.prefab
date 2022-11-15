@@ -46,6 +46,11 @@ MonoBehaviour:
   prefabs:
   - {fileID: 473867971560723131, guid: 44b494a67ce2b4240b0dcc75fb6ce5e8, type: 3}
   - {fileID: 4615458193965907771, guid: 74563f07a2cd86445bd8027a2c8c4618, type: 3}
+  - {fileID: 1205513732959517285, guid: 478dbf996107f4b459418b8f10fb91df, type: 3}
+  - {fileID: 1244705642431945167, guid: 7aaeb4464eeb8c6438446cfd3b13f5a6, type: 3}
   names:
   - Sun
   - Mercury
+  - Moon
+  - Jupiter
+  seed: -42

@@ -674,12 +674,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodePrefabs:
-  - {fileID: 7045720802826386321, guid: 2169c0af261b43948946b81e863522fe, type: 3}
-  - {fileID: 3757056213748979074, guid: faec27d4dcdabcd439fd8061cd23482a, type: 3}
-  - {fileID: 7045720802826386321, guid: 2169c0af261b43948946b81e863522fe, type: 3}
-  - {fileID: 3757056213748979074, guid: faec27d4dcdabcd439fd8061cd23482a, type: 3}
-  - {fileID: 7045720802826386321, guid: 2169c0af261b43948946b81e863522fe, type: 3}
-  - {fileID: 3757056213748979074, guid: faec27d4dcdabcd439fd8061cd23482a, type: 3}
+  - {fileID: 1094193995349519207, guid: f26cce023ce492140aa3335b36585f1c, type: 3}
+  - {fileID: 8376572100677755363, guid: c3f9b439505ce7048a5e9904e117f75a, type: 3}
+  - {fileID: 762187222825712108, guid: bc1ccc01d2b239b41ba21416e25d159f, type: 3}
+  - {fileID: 7645991054360303953, guid: 81047b7d5269eff47bc7c07bf5476334, type: 3}
+  - {fileID: 3384763506811866004, guid: 272ef6fedd2bf9d48918b34d2d28f98d, type: 3}
+  - {fileID: 8491963707132667524, guid: 6fffcc92cf19c594fa5fd322cf7e96aa, type: 3}
   boss: {fileID: 6988519699046149251, guid: 421be145240cf834c8339a21e4ef9e22, type: 3}
 --- !u!4 &1543917119
 Transform:
