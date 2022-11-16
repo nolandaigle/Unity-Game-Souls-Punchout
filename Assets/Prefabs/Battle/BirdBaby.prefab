@@ -50,6 +50,10 @@ MonoBehaviour:
   statBar: {fileID: 6112542509879400804}
   actualStat: {fileID: 6112542509302758712}
   stat: stamina
+  negativeColor: {r: 0, g: 0, b: 0, a: 0}
+  depletedColor: {r: 0.33333334, g: 0.4627451, b: 0.33333334, a: 0}
+  halfColor: {r: 0.43137255, g: 0.7058824, b: 0.43137255, a: 0}
+  fullColor: {r: 0, g: 1, b: 0, a: 0}
 --- !u!1 &6112542508237079771
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +909,10 @@ MonoBehaviour:
   statBar: {fileID: 6112542508910092809}
   actualStat: {fileID: 6112542508449907854}
   stat: health
+  negativeColor: {r: 0, g: 0, b: 0, a: 0}
+  depletedColor: {r: 0, g: 0, b: 0, a: 0}
+  halfColor: {r: 0, g: 0, b: 0, a: 0}
+  fullColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6112542509302758715
 GameObject:
   m_ObjectHideFlags: 0

@@ -352,6 +352,10 @@ MonoBehaviour:
   statBar: {fileID: 8162187616997240077}
   actualStat: {fileID: 8162187616265440138}
   stat: health
+  negativeColor: {r: 0, g: 0, b: 0, a: 0}
+  depletedColor: {r: 0, g: 0, b: 0, a: 0}
+  halfColor: {r: 0, g: 0, b: 0, a: 0}
+  fullColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8162187615194790889
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +852,10 @@ MonoBehaviour:
   statBar: {fileID: 8162187615516218976}
   actualStat: {fileID: 8162187615002358332}
   stat: stamina
+  negativeColor: {r: 0, g: 0, b: 0, a: 0}
+  depletedColor: {r: 0.33333334, g: 0.4627451, b: 0.33333334, a: 0}
+  halfColor: {r: 0.43137255, g: 0.7058824, b: 0.43137255, a: 0}
+  fullColor: {r: 0, g: 1, b: 0, a: 0}
 --- !u!1 &8162187616265440141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1223,7 @@ MonoBehaviour:
   aSource: {fileID: 8162187616816611103}
   hurt: {fileID: 8300000, guid: 9f93ecb1b685846659476b5da64b70f0, type: 3}
   dodge: {fileID: 8300000, guid: f8fa4a69fd93645f7acdb50391fedcc4, type: 3}
+  swing: {fileID: 0}
   maxHealth: 10
   maxStamina: 10
   staminaTimer: 0

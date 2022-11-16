@@ -450,9 +450,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighter: {fileID: 1844335119132110049}
+  player: {fileID: 0}
   statBar: {fileID: 1844335118333596556}
   actualStat: {fileID: 1844335118128825307}
   stat: health
+  depletedColor: {r: 0, g: 0, b: 0, a: 0}
+  halfColor: {r: 0, g: 0, b: 0, a: 0}
+  fullColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1844335117850000048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,9 +1076,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighter: {fileID: 1844335119132110049}
+  player: {fileID: 0}
   statBar: {fileID: 1844335117549625489}
   actualStat: {fileID: 1844335118330131077}
   stat: stamina
+  depletedColor: {r: 0.2544945, g: 0.4056604, b: 0.2544945, a: 0}
+  halfColor: {r: 0.46844962, g: 0.8207547, b: 0.46844962, a: 0}
+  fullColor: {r: 0, g: 1, b: 0, a: 0}
 --- !u!1 &1844335119132110047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1138,7 @@ MonoBehaviour:
   aSource: {fileID: 1844335119132110050}
   hurt: {fileID: 8300000, guid: 9f93ecb1b685846659476b5da64b70f0, type: 3}
   dodge: {fileID: 8300000, guid: f8fa4a69fd93645f7acdb50391fedcc4, type: 3}
-  stateTimer: 0
+  swing: {fileID: 0}
   maxHealth: 10
   maxStamina: 10
   staminaTimer: 0
@@ -1140,6 +1148,7 @@ MonoBehaviour:
   rightHand: {fileID: 1844335119288676511}
   leftHand: {fileID: 1844335118581538092}
   damageCounter: {fileID: 1844335117622228421}
+  staggerable: 1
 --- !u!82 &1844335119132110050
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1388,6 +1397,11 @@ MonoBehaviour:
   chargeTime: 0.75
   hitRecover: 0.5
   type: staff
+  damageType: physical
+  effectMin: 1
+  effectMax: 6
+  staminaCost: 5
+  player: 0
   magicBar: {fileID: 1844335118799114481}
   fighter: {fileID: 1844335119132110049}
   inputTimer: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,7 +150,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.75
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -392,11 +392,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: fullColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: halfColor.b
+      value: 0.4305358
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: halfColor.g
+      value: 0.7075472
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: halfColor.r
+      value: 0.4305358
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: depletedColor.b
+      value: 0.08235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: depletedColor.g
+      value: 0.47058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: depletedColor.r
+      value: 0.08235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: negativeColor.b
+      value: 0.0028924954
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: negativeColor.g
+      value: 0.27184847
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286065044996, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: negativeColor.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
     - target: {fileID: 9159807286177772959, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
       propertyPath: swing
       value: 
       objectReference: {fileID: 8300000, guid: dbce1ea07c5ca82438ae8ba49614b86c, type: 3}
+    - target: {fileID: 9159807286177772959, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: dodgeCost
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9159807286235343596, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
       propertyPath: m_RootOrder
@@ -465,7 +520,7 @@ PrefabInstance:
     - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
       propertyPath: EnemyPrefabs.Array.size
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
@@ -491,6 +546,16 @@ PrefabInstance:
         type: 3}
       propertyPath: EnemyPrefabs.Array.data[7].name
       value: Soldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[8].name
+      value: CassidyMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[9].name
+      value: YouMonster
       objectReference: {fileID: 0}
     - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
         type: 3}
@@ -522,5 +587,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3351763140079559293, guid: 7d6b7361872f14725b5cfb1e8921ed88,
         type: 3}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[8].prefab
+      value: 
+      objectReference: {fileID: 7045720802826386321, guid: 2169c0af261b43948946b81e863522fe,
+        type: 3}
+    - target: {fileID: 9159807286235343599, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[9].prefab
+      value: 
+      objectReference: {fileID: 3757056213748979074, guid: faec27d4dcdabcd439fd8061cd23482a,
+        type: 3}
+    - target: {fileID: 9159807287053015715, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807287053015716, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807287053015717, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807287522814969, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159807287522814971, guid: b818c7027931bf84c8745a6f042a37ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b818c7027931bf84c8745a6f042a37ba, type: 3}

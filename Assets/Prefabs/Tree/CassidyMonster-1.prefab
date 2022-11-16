@@ -133,7 +133,7 @@ MonoBehaviour:
   enemyOptions:
   - {fileID: 0}
   - {fileID: 0}
-  rank: 1
+  rank: 0
   objectID: 0
   boss: 0
 --- !u!1 &6383056111312731635
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3798345795900323760, guid: 1f86bfd7102eace4b8c2562d55e0baef,
+  m_Sprite: {fileID: 6926437605955309189, guid: 9c4b8adbcde63d5488a7be90982a8789,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
