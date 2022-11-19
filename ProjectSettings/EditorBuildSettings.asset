@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Astrology.unity
     guid: 745682b936a904bea913e6a05dbddb00
+  - enabled: 1
+    path: Assets/Scenes/BattleTree-Level3.unity
+    guid: d9273e1578016374cbc557ed5689be40
+  - enabled: 1
+    path: Assets/Scenes/Planet.unity
+    guid: 0652a2151f7755b44afb5b016b0ffc4d
   m_configObjects: {}
